@@ -5,8 +5,8 @@
   - git bash 실행
   - git -v 명령 실행
     - 설치된 깃 버전이 출력되면 정상 설치 및 환경변수 설정 완료
-  - git comfing --global user.name `<깃허브 닉네임>` [아이디인 이메일이 아닌 유저네임]
-  - git comfing --global user.email `<깃허브 아이디>` [가입/로그인에 사용한 이메일]
+  - git confing --global user.name `<깃허브 닉네임>` [아이디인 이메일이 아닌 유저네임]
+  - git confing --global user.email `<깃허브 아이디>` [가입/로그인에 사용한 이메일]
     - 아마 바로 로그인할 필요는 없이 git push(업로드) 할때 로그인
 - Git repository 생성 및 설정
   - Git은 정해진 디렉토리를 초기화(init)해서 작업 공간으로 만들고, 해당 공간에서 작업 수행
@@ -29,5 +29,10 @@
 * * *
 - 김윤서
   - 테스트 완료
+<<<<<<< HEAD
 -이재준
   -테스트 완료
+=======
+- 나세종
+  - 테스트 완료
+>>>>>>> 0531390248c4c3eec5a7fc3a3eaebfdb5cb2d44f
