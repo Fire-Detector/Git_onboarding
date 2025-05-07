@@ -1,4 +1,4 @@
-package test.Loot_Project.Frame;
+
 
 import java.sql.Connection;
 import java.sql.DriverManager;
