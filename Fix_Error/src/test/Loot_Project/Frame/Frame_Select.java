@@ -172,6 +172,9 @@ public class Frame_Select extends javax.swing.JFrame {
 
     private void Btn_Disk(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Disk
         // TODO add your handling code here:
+    	Frame_Disk main = new Frame_Disk();
+    	dispose();
+    	main.setVisible(true);
     }//GEN-LAST:event_Btn_Disk
 
     private void Btn_MyPage(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_MyPage
