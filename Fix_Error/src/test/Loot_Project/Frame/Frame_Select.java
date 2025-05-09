@@ -151,7 +151,7 @@ public class Frame_Select extends javax.swing.JFrame {
 
     private void Btn_MainBoard(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_MainBoard
     // TODO add your handling code here:
-    Frame_main main = new Frame_main();
+    Frame_MainBoard main = new Frame_MainBoard();
     dispose();
     main.setVisible(true);
     }//GEN-LAST:event_Btn_MainBoard
