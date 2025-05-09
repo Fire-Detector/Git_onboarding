@@ -164,6 +164,9 @@ public class Frame_Select extends javax.swing.JFrame {
 
     private void Btn_Gpu(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Gpu
         // TODO add your handling code here:
+    	Frame_Gpu main = new Frame_Gpu();
+        main.setVisible(true);
+        dispose();
     }//GEN-LAST:event_Btn_Gpu
 
     private void Btn_Power(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Power
