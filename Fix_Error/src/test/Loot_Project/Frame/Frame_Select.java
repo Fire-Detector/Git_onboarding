@@ -1,5 +1,4 @@
 
-
 /*
     Action Perform 까지 진행 완료하였으며 디자인 보정 필요
     현재 카테고리는 6개로 확인
@@ -155,7 +154,9 @@ public class Frame_Select extends javax.swing.JFrame {
     }//GEN-LAST:event_Btn_MainBoard
 
     private void Btn_Cpu(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Cpu
-        // TODO add your handling code here:
+        Frame_Cpu cpu = new Frame_Cpu();
+        dispose();
+        cpu.setVisible(true);
     }//GEN-LAST:event_Btn_Cpu
 
     private void Btn_Ram(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Ram
