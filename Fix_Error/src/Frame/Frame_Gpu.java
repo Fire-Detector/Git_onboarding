@@ -1,9 +1,8 @@
-package Frame;
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
-
+package Frame;
 
 /*
     아이템 보여주고 1번째는 아이템 번호, 2번째는 아이템 이름 
@@ -38,6 +37,7 @@ public class Frame_Gpu extends javax.swing.JFrame {
         jLabel17 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
         jButton2 = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         Lbl_Gpu1 = new javax.swing.JLabel();
@@ -56,9 +56,21 @@ public class Frame_Gpu extends javax.swing.JFrame {
         Lbl_Exam3 = new javax.swing.JLabel();
         Lbl_Exam2 = new javax.swing.JLabel();
         Button_Next = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        Btn_Selec1 = new javax.swing.JButton();
+        Btn_Selec2 = new javax.swing.JButton();
+        Btn_Selec3 = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel16 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
 
         jLabel7.setText("이름:");
 
@@ -71,6 +83,8 @@ public class Frame_Gpu extends javax.swing.JFrame {
         jLabel20.setText("설명:");
 
         jButton2.setText("jButton1");
+
+        jLabel6.setText("jLabel3");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(420, 440));
@@ -119,11 +133,50 @@ public class Frame_Gpu extends javax.swing.JFrame {
             }
         });
 
-        jButton1.setText("jButton1");
+        Btn_Selec1.setText("jButton1");
+        Btn_Selec1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_Selec1ActionPerformed(evt);
+            }
+        });
 
-        jButton3.setText("jButton1");
+        Btn_Selec2.setText("jButton1");
+        Btn_Selec2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_Selec2ActionPerformed(evt);
+            }
+        });
 
-        jButton4.setText("jButton1");
+        Btn_Selec3.setText("jButton1");
+        Btn_Selec3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_Selec3ActionPerformed(evt);
+            }
+        });
+
+        jLabel3.setText("jLabel3");
+
+        jLabel4.setText("jLabel3");
+
+        jLabel5.setText("jLabel3");
+
+        jLabel8.setText("jLabel3");
+
+        jLabel10.setText("jLabel3");
+
+        jLabel11.setText("jLabel3");
+
+        jLabel12.setText("jLabel3");
+
+        jLabel13.setText("jLabel3");
+
+        jLabel14.setText("jLabel3");
+
+        jLabel16.setText("jLabel3");
+
+        jLabel18.setText("jLabel3");
+
+        jLabel19.setText("jLabel3");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -142,32 +195,68 @@ public class Frame_Gpu extends javax.swing.JFrame {
                         .addComponent(Lbl_Gpu3, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Lbl_Price3)
-                            .addComponent(Lbl_Name3)
-                            .addComponent(Lbl_Info3)
-                            .addComponent(Lbl_Exam3)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(Lbl_Price3)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel16))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(Lbl_Info3)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel18))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(Lbl_Exam3)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel19))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(Lbl_Name3)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel14))))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(Lbl_Gpu2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Lbl_Name2)
-                            .addComponent(Lbl_Info2)
-                            .addComponent(Lbl_Exam2)
-                            .addComponent(Lbl_Price2)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(Lbl_Info2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel12))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(Lbl_Exam2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel13))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(Lbl_Price2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel11))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(Lbl_Name2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel10))))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(Lbl_Gpu1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Lbl_Name1)
-                            .addComponent(Lbl_Exam1)
-                            .addComponent(Lbl_Price1)
-                            .addComponent(Lbl_Info1))))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(Lbl_Exam1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel8))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(Lbl_Price1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel3))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(Lbl_Info1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel5))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(Lbl_Name1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jLabel4)))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jButton4)
-                        .addComponent(jButton3)
-                        .addComponent(jButton1))
+                        .addComponent(Btn_Selec3)
+                        .addComponent(Btn_Selec2)
+                        .addComponent(Btn_Selec1))
                     .addComponent(Button_Next, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(24, 24, 24))
         );
@@ -186,40 +275,64 @@ public class Frame_Gpu extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(Lbl_Gpu2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(Lbl_Name2)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(Lbl_Name2)
+                                    .addComponent(jLabel10))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Lbl_Price2)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(Lbl_Price2)
+                                    .addComponent(jLabel11))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Lbl_Info2)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(Lbl_Info2)
+                                    .addComponent(jLabel12))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Lbl_Exam2)))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(Lbl_Exam2)
+                                    .addComponent(jLabel13))))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(Lbl_Gpu3, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(Lbl_Name3)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(Lbl_Name3)
+                                    .addComponent(jLabel14))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Lbl_Price3)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(Lbl_Price3)
+                                    .addComponent(jLabel16))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Lbl_Info3)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(Lbl_Info3)
+                                    .addComponent(jLabel18))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Lbl_Exam3))))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(Lbl_Exam3)
+                                    .addComponent(jLabel19)))))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(Lbl_Name1)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(Lbl_Name1)
+                            .addComponent(jLabel4))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(Lbl_Price1)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(Lbl_Price1)
+                                    .addComponent(jLabel3))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Lbl_Info1)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(Lbl_Info1)
+                                    .addComponent(jLabel5))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Lbl_Exam1))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(Lbl_Exam1)
+                                    .addComponent(jLabel8)))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(jButton1)
+                                .addComponent(Btn_Selec1)
                                 .addGap(95, 95, 95)
-                                .addComponent(jButton3)
+                                .addComponent(Btn_Selec2)
                                 .addGap(95, 95, 95)
-                                .addComponent(jButton4)))
+                                .addComponent(Btn_Selec3)))
                         .addGap(46, 46, 46)
                         .addComponent(Button_Next, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -233,6 +346,18 @@ public class Frame_Gpu extends javax.swing.JFrame {
     private void Button_NextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_NextActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_Button_NextActionPerformed
+
+    private void Btn_Selec1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Selec1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Btn_Selec1ActionPerformed
+
+    private void Btn_Selec2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Selec2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Btn_Selec2ActionPerformed
+
+    private void Btn_Selec3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Selec3ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Btn_Selec3ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -271,6 +396,9 @@ public class Frame_Gpu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Btn_Selec1;
+    private javax.swing.JButton Btn_Selec2;
+    private javax.swing.JButton Btn_Selec3;
     private javax.swing.JButton Button_Next;
     private javax.swing.JLabel Lbl_Exam1;
     private javax.swing.JLabel Lbl_Exam2;
@@ -287,16 +415,26 @@ public class Frame_Gpu extends javax.swing.JFrame {
     private javax.swing.JLabel Lbl_Price1;
     private javax.swing.JLabel Lbl_Price2;
     private javax.swing.JLabel Lbl_Price3;
-    private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     // End of variables declaration//GEN-END:variables
 }
