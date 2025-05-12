@@ -149,8 +149,10 @@ public class Frame_Select extends javax.swing.JFrame {
     }
 
     private void Btn_MainBoard(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_MainBoard
-
-// TODO add your handling code here:
+    // TODO add your handling code here:
+    Frame_MainBoard main = new Frame_MainBoard();
+    dispose();
+    main.setVisible(true);
     }//GEN-LAST:event_Btn_MainBoard
 
     private void Btn_Cpu(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Cpu
@@ -161,10 +163,16 @@ public class Frame_Select extends javax.swing.JFrame {
 
     private void Btn_Ram(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Ram
         // TODO add your handling code here:
+        Frame_Ram main = new Frame_Ram();
+        dispose();
+        main.setVisible(true);
     }//GEN-LAST:event_Btn_Ram
 
     private void Btn_Gpu(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Gpu
         // TODO add your handling code here:
+    	Frame_Gpu main = new Frame_Gpu();
+        main.setVisible(true);
+        dispose();
     }//GEN-LAST:event_Btn_Gpu
 
     private void Btn_Power(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Power

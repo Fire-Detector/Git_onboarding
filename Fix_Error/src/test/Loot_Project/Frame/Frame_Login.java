@@ -99,8 +99,8 @@ public class Frame_Login extends javax.swing.JFrame {
     private void Btn_LoginActionPerformed(java.awt.event.ActionEvent evt) {                                          
         // TODO add your handling code here:
         Frame_Select main = new Frame_Select();
-        dispose();
         main.setVisible(true);
+        dispose();
         // 현재 구문에서 버튼을 클릭하면 이벤트 발생 함수 삽입
     }                                         
 

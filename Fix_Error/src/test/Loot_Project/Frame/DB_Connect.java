@@ -13,10 +13,10 @@ public class DB_Connect {
     private String DB_Password;
 
     public void DB_Connect(){
-        this.DB_Driver = "com.mysql.cj.jdbc.Driver";
-  	    this.DB_Url = "jdbc:mysql://localhost:3306/board?serverTimezone=UTC";
-        this.DB_Username = "root";
-        this.DB_Password = "12345";
+        this.DB_Driver = "oracle.jdbc.OracleDriver";
+  	    this.DB_Url = "jdbc:oracle:thin:@localhost:1521:xe";
+        this.DB_Username = "system";
+        this.DB_Password = "1234";
 
             Connection conn = null;
             PreparedStatement pstmt = null;
