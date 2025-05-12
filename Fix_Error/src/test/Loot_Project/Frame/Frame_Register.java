@@ -1,3 +1,9 @@
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+
+import javax.swing.JOptionPane;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -126,7 +132,98 @@ public class Frame_Register extends javax.swing.JFrame {
 
     private void Register_BtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Register_BtnActionPerformed
         // TODO add your handling code here:
+    	
+    	// 1. 입력값 꺼내기
+    	String id = Register_Id.getText();
+    	String pw = new String(Register_Password.getPassword());
+    	String phone = Regsiter_Phone.getText();
+    	String gender = Radio_Male.isSelected() ? "M" : "F";
+    	
+    	System.out.println(id+" "+pw+" "+phone+" "+gender);
+
+    	// 1.5. 비밀번호 유효성 검사
+        if (!isValidPassword(pw)) {
+            JOptionPane.showMessageDialog(this, "비밀번호는 8자 이상, 영문자/숫자/특수문자를 포함해야 합니다.");
+            return; // 실패 시 아래로 안 내려가고 함수 종료
+        }
+     // 1.5. 전화번호 유효성 검사
+        if (phone.equals("")) {
+            JOptionPane.showMessageDialog(this, "전번입력해.");
+            return; // 실패 시 아래로 안 내려가고 함수 종료
+        }
+     // 1.5. 성별 유효성 검사
+        if (!isValidPassword(gender)) {
+            JOptionPane.showMessageDialog(this, "비밀번호는 8자 이상, 영문자/숫자/특수문자를 포함해야 합니다.");
+            return; // 실패 시 아래로 안 내려가고 함수 종료
+        }
+        
+        try {
+//        	phone="";
+        	throw new Exception();
+        }catch(Exception e) {
+        	
+        }
+        
+        
+        
+        
+    	// 2. DB 연결 및 INSERT 실행
+    	try {
+    		// 오라클 드라이버 로드
+            Class.forName("oracle.jdbc.driver.OracleDriver");
+            
+            // DB 연결
+            Connection conn = DriverManager.getConnection(
+                "jdbc:oracle:thin:@localhost:1521:xe", "admin", "12345"
+            );
+
+            // SQL 준비
+            String sql = "INSERT INTO MEMBERS (member_id, password, phone, gender) VALUES (?, ?, ?, ?)";
+            PreparedStatement pstmt = conn.prepareStatement(sql);
+
+            // ? 에 값 넣기
+            pstmt.setString(1, id);
+            pstmt.setString(2, pw);
+            pstmt.setString(3, phone);
+            pstmt.setString(4, gender);
+            
+
+            // SQL 실행
+            try {
+
+                int result = pstmt.executeUpdate();
+                
+                // 결과 확인
+                if (result > 0) {
+                    JOptionPane.showMessageDialog(this, "회원가입 성공!");
+                }
+            } catch(Exception e) {
+                JOptionPane.showMessageDialog(this, "회원가입 실패...");
+            	
+            }
+
+            // 자원 정리
+            pstmt.close();
+            conn.close();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(this, "DB 오류: " + e.getMessage());
+        }
+    	
     }//GEN-LAST:event_Register_BtnActionPerformed
+    
+    // 비밀번호 작성 규칙 검사용 메서드
+    public boolean isValidPassword(String pw) {
+        if (pw.length() < 8) return false;
+
+        boolean hasLetter = pw.matches(".*[a-zA-Z].*");
+        boolean hasDigit = pw.matches(".*\\d.*");
+        boolean hasSpecial = pw.matches(".*[!@#$%^&*()].*");
+
+        return hasLetter && hasDigit && hasSpecial;
+    }
+
 
     /**
      * @param args the command line arguments

@@ -1,4 +1,6 @@
+import java.util.List;
 
+import javax.swing.table.DefaultTableModel;
 
 /*
     아이템 보여주고 1번째는 아이템 번호, 2번째는 아이템 이름 
@@ -6,8 +8,29 @@
 
 public class Frame_Gpu extends javax.swing.JFrame {
 
-    public Frame_Gpu() {
-        initComponents();
+    public Frame_Gpu() { //Frame_Gpu()생성자
+        initComponents(); // UI 초기화
+        
+     // DAO 통해 GPU 목록 가져오기
+        GpuDAO dao = new GpuDAO();
+        List<GpuDTO> gpuList = dao.getAllGpus();
+
+        DefaultTableModel model = new DefaultTableModel();
+        model.addColumn("Product ID");
+        model.addColumn("Name");
+        model.addColumn("Performance");
+        model.addColumn("Price");
+
+        for (GpuDTO gpu : gpuList) {
+            model.addRow(new Object[]{
+                gpu.getProductID(),
+                gpu.getName(),
+                gpu.getPerformance(),
+                gpu.getPrice()
+            });
+        }
+
+        jTable1.setModel(model); // 테이블에 모델 적용
     }
 
     private void initComponents() {
