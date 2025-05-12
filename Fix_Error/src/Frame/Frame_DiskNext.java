@@ -1,3 +1,4 @@
+package Frame;
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -8,18 +9,17 @@
     아이템 보여주고 1번째는 아이템 번호, 2번째는 아이템 이름 
 */
 
-import Frame.Frame_Disk;
 
 /**
  *
  * @author 솔데스크
  */
-public class Frame_Disk extends javax.swing.JFrame {
+public class Frame_DiskNext extends javax.swing.JFrame {
 
     /**
      * Creates new form Frame_Cpu
      */
-    public Frame_Disk() {
+    public Frame_DiskNext() {
         initComponents();
     }
 
@@ -40,22 +40,22 @@ public class Frame_Disk extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        Lbl_Disk1 = new javax.swing.JLabel();
-        Lbl_Disk2 = new javax.swing.JLabel();
-        Lbl_Disk3 = new javax.swing.JLabel();
-        Lbl_Name1 = new javax.swing.JLabel();
-        Lbl_Name2 = new javax.swing.JLabel();
-        Lbl_Name3 = new javax.swing.JLabel();
-        Lbl_Price1 = new javax.swing.JLabel();
-        Lbl_Price2 = new javax.swing.JLabel();
-        Lbl_Price3 = new javax.swing.JLabel();
-        Lbl_Info2 = new javax.swing.JLabel();
-        Lbl_Info3 = new javax.swing.JLabel();
-        Lbl_Info1 = new javax.swing.JLabel();
-        Lbl_Exam1 = new javax.swing.JLabel();
-        Lbl_Exam3 = new javax.swing.JLabel();
-        Lbl_Exam2 = new javax.swing.JLabel();
-        Button_Next = new javax.swing.JButton();
+        Lbl_Disk4 = new javax.swing.JLabel();
+        Lbl_Disk5 = new javax.swing.JLabel();
+        Lbl_Disk6 = new javax.swing.JLabel();
+        Lbl_Name4 = new javax.swing.JLabel();
+        Lbl_Name5 = new javax.swing.JLabel();
+        Lbl_Name6 = new javax.swing.JLabel();
+        Lbl_Price4 = new javax.swing.JLabel();
+        Lbl_Price5 = new javax.swing.JLabel();
+        Lbl_Price6 = new javax.swing.JLabel();
+        Lbl_Info5 = new javax.swing.JLabel();
+        Lbl_Info6 = new javax.swing.JLabel();
+        Lbl_Info4 = new javax.swing.JLabel();
+        Lbl_Exam4 = new javax.swing.JLabel();
+        Lbl_Exam6 = new javax.swing.JLabel();
+        Lbl_Exam5 = new javax.swing.JLabel();
+        Button_Previous = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
@@ -80,41 +80,41 @@ public class Frame_Disk extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("맑은 고딕", 3, 18)); // NOI18N
         jLabel2.setText("아이템 추가는 소스에서 추가 가능");
 
-        Lbl_Disk1.setText("그림 넣어주세요1");
+        Lbl_Disk4.setText("그림 넣어주세요4");
 
-        Lbl_Disk2.setText("그림 넣어주세요2");
+        Lbl_Disk5.setText("그림 넣어주세요5");
 
-        Lbl_Disk3.setText("그림 넣어주세요3");
+        Lbl_Disk6.setText("그림 넣어주세요6");
 
-        Lbl_Name1.setText("이름:");
+        Lbl_Name4.setText("이름:");
 
-        Lbl_Name2.setText("이름:");
+        Lbl_Name5.setText("이름:");
 
-        Lbl_Name3.setText("이름:");
+        Lbl_Name6.setText("이름:");
 
-        Lbl_Price1.setText("가격:");
+        Lbl_Price4.setText("가격:");
 
-        Lbl_Price2.setText("가격:");
+        Lbl_Price5.setText("가격:");
 
-        Lbl_Price3.setText("가격:");
+        Lbl_Price6.setText("가격:");
 
-        Lbl_Info2.setText("정보:");
+        Lbl_Info5.setText("정보:");
 
-        Lbl_Info3.setText("정보:");
+        Lbl_Info6.setText("정보:");
 
-        Lbl_Info1.setText("정보:");
+        Lbl_Info4.setText("정보:");
 
-        Lbl_Exam1.setText("설명:");
+        Lbl_Exam4.setText("설명:");
 
-        Lbl_Exam3.setText("설명:");
+        Lbl_Exam6.setText("설명:");
 
-        Lbl_Exam2.setText("설명:");
+        Lbl_Exam5.setText("설명:");
 
-        Button_Next.setLabel("다음 페이지");
-        Button_Next.setPreferredSize(new java.awt.Dimension(100, 30));
-        Button_Next.addActionListener(new java.awt.event.ActionListener() {
+        Button_Previous.setText("이전 페이지");
+        Button_Previous.setPreferredSize(new java.awt.Dimension(100, 30));
+        Button_Previous.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Button_NextActionPerformed(evt);
+                Button_PreviousActionPerformed(evt);
             }
         });
 
@@ -138,37 +138,42 @@ public class Frame_Disk extends javax.swing.JFrame {
                 .addGap(6, 6, 6)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(Lbl_Disk3, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Lbl_Price3)
-                            .addComponent(Lbl_Name3)
-                            .addComponent(Lbl_Info3)
-                            .addComponent(Lbl_Exam3)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(Lbl_Disk5, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(Lbl_Name5)
+                                    .addComponent(Lbl_Info5)
+                                    .addComponent(Lbl_Exam5)
+                                    .addComponent(Lbl_Price5)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(Lbl_Disk4, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(Lbl_Name4)
+                                    .addComponent(Lbl_Price4)
+                                    .addComponent(Lbl_Exam4)
+                                    .addComponent(Lbl_Info4))))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 155, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jButton4)
+                            .addComponent(jButton3)
+                            .addComponent(jButton1))
+                        .addGap(24, 24, 24))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(Lbl_Disk2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Lbl_Disk6, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Lbl_Name2)
-                            .addComponent(Lbl_Info2)
-                            .addComponent(Lbl_Exam2)
-                            .addComponent(Lbl_Price2)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(Lbl_Disk1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Lbl_Name1)
-                            .addComponent(Lbl_Exam1)
-                            .addComponent(Lbl_Price1)
-                            .addComponent(Lbl_Info1))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jButton4)
-                        .addComponent(jButton3)
-                        .addComponent(jButton1))
-                    .addComponent(Button_Next, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(24, 24, 24))
+                            .addComponent(Lbl_Price6)
+                            .addComponent(Lbl_Name6)
+                            .addComponent(Lbl_Exam6)
+                            .addComponent(Lbl_Info6))
+                        .addContainerGap(255, Short.MAX_VALUE))))
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(Button_Previous, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -180,47 +185,48 @@ public class Frame_Disk extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(Lbl_Disk1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Lbl_Disk4, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Lbl_Disk2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Lbl_Disk5, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(Lbl_Name2)
+                                .addComponent(Lbl_Name5)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Lbl_Price2)
+                                .addComponent(Lbl_Price5)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Lbl_Info2)
+                                .addComponent(Lbl_Info5)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Lbl_Exam2)))
+                                .addComponent(Lbl_Exam5)))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Lbl_Disk3, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(Lbl_Name3)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(Lbl_Disk6, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(Lbl_Info6))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Lbl_Price3)
+                                .addComponent(Button_Previous, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(Lbl_Name6)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Lbl_Info3)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Lbl_Exam3))))
+                                .addComponent(Lbl_Price6)
+                                .addGap(26, 26, 26)
+                                .addComponent(Lbl_Exam6))))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(Lbl_Name1)
+                        .addComponent(Lbl_Name4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(Lbl_Price1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Lbl_Info1)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Lbl_Exam1))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jButton1)
                                 .addGap(95, 95, 95)
                                 .addComponent(jButton3)
                                 .addGap(95, 95, 95)
-                                .addComponent(jButton4)))
-                        .addGap(46, 46, 46)
-                        .addComponent(Button_Next, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(jButton4))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(Lbl_Price4)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Lbl_Info4)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(Lbl_Exam4)))))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -229,9 +235,9 @@ public class Frame_Disk extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void Button_NextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_NextActionPerformed
+    private void Button_PreviousActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_PreviousActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_Button_NextActionPerformed
+    }//GEN-LAST:event_Button_PreviousActionPerformed
 
     /**
      * @param args the command line arguments
@@ -250,14 +256,18 @@ public class Frame_Disk extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Frame_Disk.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Frame_DiskNext.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Frame_Disk.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Frame_DiskNext.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Frame_Disk.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Frame_DiskNext.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Frame_Disk.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Frame_DiskNext.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
         //</editor-fold>
@@ -266,28 +276,28 @@ public class Frame_Disk extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Frame_Disk().setVisible(true);
+                new Frame_DiskNext().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton Button_Next;
-    private javax.swing.JLabel Lbl_Disk1;
-    private javax.swing.JLabel Lbl_Disk2;
-    private javax.swing.JLabel Lbl_Disk3;
-    private javax.swing.JLabel Lbl_Exam1;
-    private javax.swing.JLabel Lbl_Exam2;
-    private javax.swing.JLabel Lbl_Exam3;
-    private javax.swing.JLabel Lbl_Info1;
-    private javax.swing.JLabel Lbl_Info2;
-    private javax.swing.JLabel Lbl_Info3;
-    private javax.swing.JLabel Lbl_Name1;
-    private javax.swing.JLabel Lbl_Name2;
-    private javax.swing.JLabel Lbl_Name3;
-    private javax.swing.JLabel Lbl_Price1;
-    private javax.swing.JLabel Lbl_Price2;
-    private javax.swing.JLabel Lbl_Price3;
+    private javax.swing.JButton Button_Previous;
+    private javax.swing.JLabel Lbl_Disk4;
+    private javax.swing.JLabel Lbl_Disk5;
+    private javax.swing.JLabel Lbl_Disk6;
+    private javax.swing.JLabel Lbl_Exam4;
+    private javax.swing.JLabel Lbl_Exam5;
+    private javax.swing.JLabel Lbl_Exam6;
+    private javax.swing.JLabel Lbl_Info4;
+    private javax.swing.JLabel Lbl_Info5;
+    private javax.swing.JLabel Lbl_Info6;
+    private javax.swing.JLabel Lbl_Name4;
+    private javax.swing.JLabel Lbl_Name5;
+    private javax.swing.JLabel Lbl_Name6;
+    private javax.swing.JLabel Lbl_Price4;
+    private javax.swing.JLabel Lbl_Price5;
+    private javax.swing.JLabel Lbl_Price6;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;

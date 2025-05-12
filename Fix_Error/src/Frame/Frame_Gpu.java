@@ -1,3 +1,4 @@
+package Frame;
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
@@ -8,18 +9,17 @@
     아이템 보여주고 1번째는 아이템 번호, 2번째는 아이템 이름 
 */
 
-import Frame.Frame_Disk;
 
 /**
  *
  * @author 솔데스크
  */
-public class Frame_Disk extends javax.swing.JFrame {
+public class Frame_Gpu extends javax.swing.JFrame {
 
     /**
      * Creates new form Frame_Cpu
      */
-    public Frame_Disk() {
+    public Frame_Gpu() {
         initComponents();
     }
 
@@ -40,9 +40,9 @@ public class Frame_Disk extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        Lbl_Disk1 = new javax.swing.JLabel();
-        Lbl_Disk2 = new javax.swing.JLabel();
-        Lbl_Disk3 = new javax.swing.JLabel();
+        Lbl_Gpu1 = new javax.swing.JLabel();
+        Lbl_Gpu2 = new javax.swing.JLabel();
+        Lbl_Gpu3 = new javax.swing.JLabel();
         Lbl_Name1 = new javax.swing.JLabel();
         Lbl_Name2 = new javax.swing.JLabel();
         Lbl_Name3 = new javax.swing.JLabel();
@@ -73,6 +73,7 @@ public class Frame_Disk extends javax.swing.JFrame {
         jButton2.setText("jButton1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(420, 440));
 
         jLabel1.setFont(new java.awt.Font("맑은 고딕", 1, 18)); // NOI18N
         jLabel1.setText("GPU");
@@ -80,11 +81,11 @@ public class Frame_Disk extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("맑은 고딕", 3, 18)); // NOI18N
         jLabel2.setText("아이템 추가는 소스에서 추가 가능");
 
-        Lbl_Disk1.setText("그림 넣어주세요1");
+        Lbl_Gpu1.setText("그림 넣어주세요1");
 
-        Lbl_Disk2.setText("그림 넣어주세요2");
+        Lbl_Gpu2.setText("그림 넣어주세요2");
 
-        Lbl_Disk3.setText("그림 넣어주세요3");
+        Lbl_Gpu3.setText("그림 넣어주세요3");
 
         Lbl_Name1.setText("이름:");
 
@@ -138,7 +139,7 @@ public class Frame_Disk extends javax.swing.JFrame {
                 .addGap(6, 6, 6)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(Lbl_Disk3, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Lbl_Gpu3, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(Lbl_Price3)
@@ -146,7 +147,7 @@ public class Frame_Disk extends javax.swing.JFrame {
                             .addComponent(Lbl_Info3)
                             .addComponent(Lbl_Exam3)))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(Lbl_Disk2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Lbl_Gpu2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(Lbl_Name2)
@@ -154,7 +155,7 @@ public class Frame_Disk extends javax.swing.JFrame {
                             .addComponent(Lbl_Exam2)
                             .addComponent(Lbl_Price2)))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(Lbl_Disk1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Lbl_Gpu1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(Lbl_Name1)
@@ -180,10 +181,10 @@ public class Frame_Disk extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(Lbl_Disk1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(Lbl_Gpu1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Lbl_Disk2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Lbl_Gpu2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(Lbl_Name2)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -194,7 +195,7 @@ public class Frame_Disk extends javax.swing.JFrame {
                                 .addComponent(Lbl_Exam2)))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(Lbl_Disk3, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(Lbl_Gpu3, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(Lbl_Name3)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -250,35 +251,33 @@ public class Frame_Disk extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Frame_Disk.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Frame_Gpu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Frame_Disk.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Frame_Gpu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Frame_Disk.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Frame_Gpu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Frame_Disk.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Frame_Gpu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
-        //</editor-fold>
         //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Frame_Disk().setVisible(true);
+                new Frame_Gpu().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Button_Next;
-    private javax.swing.JLabel Lbl_Disk1;
-    private javax.swing.JLabel Lbl_Disk2;
-    private javax.swing.JLabel Lbl_Disk3;
     private javax.swing.JLabel Lbl_Exam1;
     private javax.swing.JLabel Lbl_Exam2;
     private javax.swing.JLabel Lbl_Exam3;
+    private javax.swing.JLabel Lbl_Gpu1;
+    private javax.swing.JLabel Lbl_Gpu2;
+    private javax.swing.JLabel Lbl_Gpu3;
     private javax.swing.JLabel Lbl_Info1;
     private javax.swing.JLabel Lbl_Info2;
     private javax.swing.JLabel Lbl_Info3;

@@ -1,3 +1,5 @@
+package Frame;
+
 
 /*
     Action Perform 까지 진행 완료하였으며 디자인 보정 필요
@@ -150,7 +152,7 @@ public class Frame_Select extends javax.swing.JFrame {
 
     private void Btn_MainBoard(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_MainBoard
     // TODO add your handling code here:
-    Frame_MainBoard main = new Frame_MainBoard();
+    Frame_main main = new Frame_main();
     dispose();
     main.setVisible(true);
     }//GEN-LAST:event_Btn_MainBoard
