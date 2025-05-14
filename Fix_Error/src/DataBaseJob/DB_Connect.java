@@ -6,8 +6,19 @@
  * 4. 각각의 메서드에서 데이터 베이스 연동이기에 데이터베이스 연동 해제(최초 데이터 베이스 연동만 하면 됨, 연동 해제는 나중에)
  * 5. 기존 리스트 형태에서 리스트 형태에서 값을 꺼내오는 형식으로 변경
  * 6. 나세종 pc에서 테스트 불가하기에 테스트 필요
- * 
+ * 7. Disk02 부분, ProductDTO 파트 이용하여 수정 필요
+ * 기본적인 수정은 대략 완료 다만 개인 코드에 대한 설명이 필요
  */
+
+ /*
+  * 권고사항:
+  1. 데이터베이스 사용할때는 메서드는 DB_Connection에 구현 필요
+  2. 각 코드가 비슷할 경우 최대한 남의 것 사용하기
+  3. 푸쉬의 경우 혹시나 잘못하지 않았나 다시 확인하기
+  4. Frame폴더에는 Frame만 넣어두기
+  5. 커밋 할 경우 메시지 변경사항 짧게나마 넣어두기
+  6. 데이터베이스 사용할 때마다 connect 하는데 connect는 한번만 선언하고 다 끝나고 종료여서 login, register쪽에만 선언함
+  */
 
 
 
@@ -18,6 +29,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+
 
 public class DB_Connect {
 	private String DB_Driver;
@@ -134,17 +146,20 @@ public class DB_Connect {
 		return list;
 	}// getAllGpus()
 
+	// 회원가입: 나세종
 	public void Register(String User_id, String User_Password, String User_Name, String User_Phone, String User_Adress, boolean check) throws SQLException{
 		String sql = "INSERT INTO User_tbl VALUES User_Id = ?, User_Pwd = ?, User_Name = ?, User_Phone = ?, User_Address = ?";
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
+		if(check){
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, User_id);
-			pstmt.setString(1, User_Password);
-			pstmt.setString(1, User_Name);
-			pstmt.setString(1, User_Phone);
-			pstmt.setString(1, User_Adress);
+			pstmt.setString(2, User_Password);
+			pstmt.setString(3, User_Name);
+			pstmt.setString(4, User_Phone);
+			pstmt.setString(5, User_Adress);
+		}
 
 	}
 
