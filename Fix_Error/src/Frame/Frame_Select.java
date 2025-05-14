@@ -151,7 +151,6 @@ public class Frame_Select extends javax.swing.JFrame {
 
     private void Btn_MainBoard(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_MainBoard
         Frame_MainBoard main = new Frame_MainBoard();
-    	dispose();
     	main.setVisible(true);
     }//GEN-LAST:event_Btn_MainBoard
 
@@ -165,35 +164,30 @@ public class Frame_Select extends javax.swing.JFrame {
     private void Btn_Ram(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Ram
         // TODO add your handling code here:
         Frame_Ram main = new Frame_Ram();
-    	dispose();
     	main.setVisible(true);
     }//GEN-LAST:event_Btn_Ram
 
     private void Btn_Gpu(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Gpu
         // TODO add your handling code here:
         Frame_Gpu main = new Frame_Gpu();
-    	dispose();
     	main.setVisible(true);
     }//GEN-LAST:event_Btn_Gpu
 
     private void Btn_Power(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Power
         // TODO add your handling code here:
         Frame_Power main = new Frame_Power();
-    	dispose();
     	main.setVisible(true);
     }//GEN-LAST:event_Btn_Power
 
     private void Btn_Disk(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Disk
         // TODO add your handling code here:
     	Frame_Disk main = new Frame_Disk();
-    	dispose();
     	main.setVisible(true);
     }//GEN-LAST:event_Btn_Disk
 
     private void Btn_MyPage(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_MyPage
         // TODO add your handling code here:
         Frame_MyPage main = new Frame_MyPage();
-    	dispose();
     	main.setVisible(true);
     }//GEN-LAST:event_Btn_MyPage
 
