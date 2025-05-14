@@ -8,6 +8,9 @@
     아이템 보여주고 1번째는 아이템 번호, 2번째는 아이템 이름 
 */
 
+import java.util.List;
+
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -71,6 +74,14 @@ public class Frame_Gpu extends javax.swing.JFrame {
         jLabel16 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
+
+        DB_Connect dao = new DB_Connect();
+
+        List<ProductDTO> gpuList = dao.getAllGpus();
+        ProductDTO gpu0 = gpuList.get(0);
+        ProductDTO gpu1 = gpuList.get(1);
+        ProductDTO gpu2 = gpuList.get(2);
+
 
         jLabel7.setText("이름:");
 
@@ -154,27 +165,27 @@ public class Frame_Gpu extends javax.swing.JFrame {
             }
         });
 
-        jLabel3.setText("가격1");
+        jLabel3.setToolTipText(gpu0.getName());
 
-        jLabel4.setText("이름1");
+        jLabel4.setText(String.valueOf(gpu0.getPrice()));
 
-        jLabel5.setText("정보1");
+        jLabel5.setText(gpu0.getPerformance());
 
         jLabel8.setText("설명1");
 
-        jLabel10.setText("이름2");
+        jLabel10.setText(gpu1.getName());
 
-        jLabel11.setText("가격2");
+        jLabel11.setText(String.valueOf(gpu1.getPrice()));
 
-        jLabel12.setText("정보2");
+        jLabel12.setText(gpu1.getPerformance());
 
         jLabel13.setText("설명2");
 
-        jLabel14.setText("이름3");
+        jLabel14.setText(gpu2.getName());
 
-        jLabel16.setText("가격3");
+        jLabel16.setText(String.valueOf(gpu2.getPrice()));
 
-        jLabel18.setText("정보3");
+        jLabel18.setText(gpu2.getPerformance());
 
         jLabel19.setText("설명3");
 
@@ -344,7 +355,9 @@ public class Frame_Gpu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void Button_NextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_NextActionPerformed
-        // TODO add your handling code here:
+        Frame_GpuNext next = new Frame_GpuNext();
+        dispose();
+        next.setVisible(true);
     }//GEN-LAST:event_Button_NextActionPerformed
 
     private void Btn_Selec1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Selec1ActionPerformed

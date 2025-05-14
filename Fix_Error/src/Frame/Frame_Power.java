@@ -9,6 +9,7 @@
 */
 
 
+
 /**
  *
  * @author 솔데스크
@@ -324,6 +325,9 @@ public class Frame_Power extends javax.swing.JFrame {
 
     private void Button_NextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_NextActionPerformed
         // TODO add your handling code here:
+        Frame_PowerNext next = new Frame_PowerNext();
+        dispose();
+        next.setVisible(true);
     }//GEN-LAST:event_Button_NextActionPerformed
 
     private void Btn_Selec3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Selec3ActionPerformed

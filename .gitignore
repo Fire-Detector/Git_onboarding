@@ -2,3 +2,4 @@ bin1/
 .classpath
 .project
 *.jar
+/bin/
