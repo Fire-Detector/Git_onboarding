@@ -1,3 +1,7 @@
+/*
+ * 제작 인원: 나세종, 호재영, 이재준
+ */
+
 public class UserDTO {
     
     private String User_id;
