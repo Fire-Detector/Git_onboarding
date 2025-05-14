@@ -7,7 +7,10 @@
 /*
     아이템 보여주고 1번째는 아이템 번호, 2번째는 아이템 이름 
 */
+import java.awt.Image;
+import java.util.ArrayList;
 
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -86,16 +89,31 @@ public class Frame_Disk extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("맑은 고딕", 1, 18)); // NOI18N
-        jLabel1.setText("GPU");
+        jLabel1.setText("Disk");
 
         jLabel2.setFont(new java.awt.Font("맑은 고딕", 3, 18)); // NOI18N
         jLabel2.setText("아이템 추가는 소스에서 추가 가능");
-
-        Lbl_Disk1.setText("그림 넣어주세요1");
-
-        Lbl_Disk2.setText("그림 넣어주세요2");
-
-        Lbl_Disk3.setText("그림 넣어주세요3");
+        
+        ImageIcon icon = new ImageIcon("C:\\test123\\Git_onboarding\\Fix_Error\\src\\삼성 990 PRO 1TB.jpeg");
+        Image Image = icon.getImage();
+        Image resizeImage = Image.getScaledInstance( 100, 80, Image.SCALE_SMOOTH);
+        ImageIcon resizedIcon = new ImageIcon(resizeImage);
+        Lbl_Disk1.setIcon(resizedIcon);
+        Lbl_Disk1.setText("");
+        
+        ImageIcon icon1 = new ImageIcon("C:\\test123\\Git_onboarding\\Fix_Error\\src\\WD Blue.jpeg");
+        Image Image1 = icon1.getImage();
+        Image resizeImage1 = Image1.getScaledInstance( 100, 80, Image.SCALE_SMOOTH);
+        ImageIcon resizedIcon1 = new ImageIcon(resizeImage1);
+        Lbl_Disk2.setIcon(resizedIcon1);
+        Lbl_Disk2.setText("");
+        
+        ImageIcon icon2 = new ImageIcon("C:\\test123\\Git_onboarding\\Fix_Error\\src\\Toshiba X300 6TB.jpeg");
+        Image Image2 = icon2.getImage();
+        Image resizeImage2 = Image2.getScaledInstance( 100, 80, Image.SCALE_SMOOTH);
+        ImageIcon resizedIcon2 = new ImageIcon(resizeImage2);
+        Lbl_Disk3.setIcon(resizedIcon2);
+        Lbl_Disk3.setText("");
 
         Lbl_Name1.setText("이름:");
 
@@ -129,51 +147,57 @@ public class Frame_Disk extends javax.swing.JFrame {
             }
         });
 
-        Btn_Selec1.setText("jButton1");
+        Btn_Selec1.setText("추가");
         Btn_Selec1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Btn_Selec1ActionPerformed(evt);
             }
         });
 
-        Btn_Selec2.setText("jButton1");
+        Btn_Selec2.setText("추가");
         Btn_Selec2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Btn_Selec2ActionPerformed(evt);
             }
         });
 
-        Btn_Selec3.setText("jButton1");
+        Btn_Selec3.setText("추가");
         Btn_Selec3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Btn_Selec3ActionPerformed(evt);
             }
         });
+        ArrayList<Disk_02> diskList = Disk_02.getDiskList();
+        Disk_02 disk = diskList.get(0);
+        Object[][] data = new Object[diskList.size()][5];
 
-        jLabel4.setText("이름1");
+        for (int i = 0; i < diskList.size(); i++) {
+        	Disk_02 ds = diskList.get(i);
+            data[i][0] = ds.getProdctid();
+            data[i][1] = ds.getDiskid();
+            data[i][2] = ds.getDiskdata();
+            data[i][3] = ds.getPrice();
+        }
+        jLabel4.setText(disk.getDiskid());
+        jLabel3.setText(disk.getPrice());
+        jLabel5.setText(disk.getProdctid());
+        jLabel8.setText(disk.getDiskdata());
+        
+        if (diskList.size() > 1) {
+        Disk_02 disk1 = diskList.get(1);
+        jLabel10.setText(disk1.getDiskid());
+        jLabel11.setText(disk1.getPrice());
+        jLabel12.setText(disk1.getProdctid());
+        jLabel13.setText(disk1.getDiskdata());
+        }
 
-        jLabel3.setText("가격1");
-
-        jLabel5.setText("정보1");
-
-        jLabel8.setText("설명1");
-
-        jLabel10.setText("이름2");
-
-        jLabel11.setText("가격2");
-
-        jLabel12.setText("정보2");
-
-        jLabel13.setText("설명2");
-
-        jLabel14.setText("이름3");
-
-        jLabel16.setText("가격3");
-
-        jLabel18.setText("정보3");
-
-        jLabel19.setText("설명3");
-
+        if (diskList.size() > 2) {
+        Disk_02 disk2 = diskList.get(2);
+        jLabel14.setText(disk2.getDiskid());
+        jLabel16.setText(disk2.getPrice());
+        jLabel18.setText(disk2.getProdctid());
+        jLabel19.setText(disk2.getDiskdata());
+        }
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -281,10 +305,9 @@ public class Frame_Disk extends javax.swing.JFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(Btn_Selec1)
                                 .addGap(95, 95, 95)
-                                .addComponent(Btn_Selec2)
+                                .addComponent(Btn_Selec2)                               
                                 .addGap(95, 95, 95)
                                 .addComponent(Btn_Selec3)))
-                        .addGap(46, 46, 46)
                         .addComponent(Button_Next, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -325,6 +348,9 @@ public class Frame_Disk extends javax.swing.JFrame {
 
     private void Button_NextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_NextActionPerformed
         // TODO add your handling code here:
+    	Frame_DiskNext diskNext = new Frame_DiskNext();
+    	diskNext.setVisible(true);
+    	dispose();
     }//GEN-LAST:event_Button_NextActionPerformed
 
     private void Btn_Selec1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Selec1ActionPerformed
@@ -418,4 +444,7 @@ public class Frame_Disk extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     // End of variables declaration//GEN-END:variables
+
+
+
 }
