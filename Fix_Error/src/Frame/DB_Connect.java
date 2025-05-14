@@ -14,15 +14,13 @@ public class DB_Connect {
 	private String DB_Password;
 	private Connection conn;
 
-	public DB_Connect() {
+	public void getConnection() {
 		this.DB_Driver = "oracle.jdbc.OracleDriver";
 		this.DB_Url = "jdbc:oracle:thin:@localhost:1521:xe";
 		this.DB_Username = "system";
 		this.DB_Password = "12345";
 
 		Connection conn = null;
-		PreparedStatement pstmt = null;
-		ResultSet rs = null;
 		try {
 
 			Class.forName(DB_Driver);
@@ -36,75 +34,56 @@ public class DB_Connect {
 			e1.printStackTrace();
 		}
 	}
-	public Connection getConnection() {
-	    try {
-	        Class.forName(DB_Driver);
-	        Connection conn = DriverManager.getConnection(DB_Url, DB_Username, DB_Password);
-	        return conn;
-	    } catch (Exception e) {
-	        e.printStackTrace();
-	        return null;
-	    }
-	}
 
-//테스트
-	public boolean ID_Check() throws SQLException {
-		String sql = "SELECT CUSTOMER_ID FROM USER WHERE CUSTOMER_ID = ? ";
-		Connection conn = null;
-		PreparedStatement pstmt = null;
-		ResultSet rs = null;
+	public boolean login(String userid, String inputPw) {
+		boolean result = false;
 
+		Connection con = null;
 		try {
-			pstmt = conn.prepareStatement(sql);
+			con = DriverManager.getConnection(
+					"jdbc:oracle:thin:@localhost:1521:xe", "member", "12345");
 		} catch (SQLException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		rs = pstmt.executeQuery();
-		return rs.next();
 
-	}
-
-	public boolean Password_Check() throws SQLException {
-		String sql = "SELCET CUSTOMER_PW FROM USER WHERE CUSTOMER_PW = ?";
-		Connection conn = null;
-		PreparedStatement pstmt = null;
-		ResultSet rs = null;
+		Password_01 userDto = null;
 
 		try {
-			pstmt = conn.prepareStatement(sql);
-		} catch (SQLException e) {
+			String sql = "SELECT userid,password FROM  usertbl WHERE userid=?";
+			PreparedStatement pstmt = con.prepareStatement(sql);
+			pstmt.setString(1, userid);
+			ResultSet rs = pstmt.executeQuery();
+
+			if (rs.next()) {
+				userDto = new Password_01();
+				userDto.setUserid(rs.getString("userid"));
+				userDto.setPassword(rs.getString("password"));
+
+				if (userDto.getPassword().equals(inputPw)) {
+					result = true;
+				}
+			}
+
+			rs.close();
+			pstmt.close();
+			con.close();
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		rs = pstmt.executeQuery();
-		return rs.next();
+		return result;
+
 	}
 
-	public void Show_List() throws SQLException {
-		String sql = "SELECT * FROM ITEM";
-		Connection conn = null;
-		PreparedStatement pstmt = null;
-		ResultSet rs = null;
-
-		try {
-			pstmt = conn.prepareStatement(sql);
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		rs = pstmt.executeQuery();
-	}
-	public void DB_Connect() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	public String My_Page(String id) throws SQLException{
+	public List<UserDTO> My_Page(String User_id) throws SQLException {
 		String sql = "SELECT user_id, user_phone, user_adress from user_tbl where customer_id=?";
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		pstmt = conn.prepareStatement(sql);
-		pstmt.setString(1, id);
+		List<UserDTO> list = new ArrayList<>();
 
+		pstmt = conn.prepareStatement(sql);
+		pstmt.setString(1, User_id);
 
 		try {
 			pstmt = conn.prepareStatement(sql);
@@ -112,37 +91,46 @@ public class DB_Connect {
 			e.printStackTrace();
 		}
 		rs = pstmt.executeQuery();
+					while (rs.next()) {
+				String id = rs.getString("User_id");
+				String name = rs.getString("User_name");
+				String phone = rs.getString("User_Phone");
 
-		//rs[1];
 
-		return " ";
+				UserDTO info = new UserDTO(id, name, phone);// DTO로 포장
+				list.add(info);// 리스트에 넣기
+			}
+
+		return list;
+
+		// rs[1];
 	}
 
-	    public List<GpuDTO> getAllGpus() { //getAllGpus()메소드: GpuDTO객체 리스트를 반환
-        List<GpuDTO> list = new ArrayList<>(); //GpuDTO라는 객체들을 담을 수 있는 비어있는 리스트 생성
+	public List<ProductDTO> getAllGpus() { // getAllGpus()메소드: GpuDTO객체 리스트를 반환
+		List<ProductDTO> list = new ArrayList<>(); // GpuDTO라는 객체들을 담을 수 있는 비어있는 리스트 생성
 
-        try (
-        	//3. SQL 실행 & 결과 처리
-            Connection conn = getConnection(); //오라클 DB와 연결된 Connection 객체 생성
-            PreparedStatement pstmt = conn.prepareStatement("SELECT * FROM GPU"); //SQL 실행을 준비하는 PreparedStatement 생성 ("GPU 테이블 전체 조회" 쿼리 준비)
-            ResultSet rs = pstmt.executeQuery(); //결과는 rs (ResultSet)에 담김
-        ) {
-        	//4. 결과를 GpuDTO 객체로 변환
-            while (rs.next()) {
-                int id = rs.getInt("productID");
-                String name = rs.getString("name");
-                String perf = rs.getString("performance");
-                int price = rs.getInt("price");
+		try (
+				// 3. SQL 실행 & 결과 처리
+				PreparedStatement pstmt = conn.prepareStatement("SELECT * FROM GPU"); // SQL 실행을 준비하는 PreparedStatement
+																						// 생성 ("GPU 테이블 전체 조회" 쿼리 준비)
+				ResultSet rs = pstmt.executeQuery(); // 결과는 rs (ResultSet)에 담김
+		) {
+			// 4. 결과를 GpuDTO 객체로 변환
+			while (rs.next()) {
+				int id = rs.getInt("productID");
+				String name = rs.getString("name");
+				String perf = rs.getString("performance");
+				int price = rs.getInt("price");
 
-                GpuDTO gpu = new GpuDTO(id, name, perf, price);// DTO로 포장
-                list.add(gpu);// 리스트에 넣기
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+				ProductDTO gpu = new ProductDTO(id, name, perf, price);// DTO로 포장
+				list.add(gpu);// 리스트에 넣기
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 
-        //5. 리스트 반환
-        return list;
-    }//getAllGpus()
+		// 5. 리스트 반환
+		return list;
+	}// getAllGpus()
 
 }

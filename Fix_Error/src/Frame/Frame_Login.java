@@ -103,7 +103,9 @@ public class Frame_Login extends javax.swing.JFrame {
         // TODO add your handling code here:
     	String userid = jTextField1.getText();
     	String inputPw = new String(jPasswordField1.getPassword());
-    	if (Password_02.login(userid, inputPw)) {
+        DB_Connect con = new DB_Connect();
+        con.getConnection();
+    	if (con.login(userid, inputPw)) {
     		JOptionPane.showMessageDialog(this, "로그인 성공");
     		dispose();
     	    new Frame_Select().setVisible(true);
@@ -117,7 +119,7 @@ public class Frame_Login extends javax.swing.JFrame {
         // TODO add your handling code here:
         Frame_Register main = new Frame_Register();
         DB_Connect db = new DB_Connect();
-		db.DB_Connect();
+        db.getConnection();
         dispose();
         main.setVisible(true);
         // 현재 구문에서 버튼을 클릭하면 이벤트 발생 함수 삽입

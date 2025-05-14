@@ -76,10 +76,11 @@ public class Frame_Gpu extends javax.swing.JFrame {
         jLabel19 = new javax.swing.JLabel();
 
         DB_Connect dao = new DB_Connect();
-        List<GpuDTO> gpuList = dao.getAllGpus();
-        GpuDTO gpu0 = gpuList.get(0);
-        GpuDTO gpu1 = gpuList.get(1);
-        GpuDTO gpu2 = gpuList.get(2);
+
+        List<ProductDTO> gpuList = dao.getAllGpus();
+        ProductDTO gpu0 = gpuList.get(0);
+        ProductDTO gpu1 = gpuList.get(1);
+        ProductDTO gpu2 = gpuList.get(2);
 
 
         jLabel7.setText("이름:");
