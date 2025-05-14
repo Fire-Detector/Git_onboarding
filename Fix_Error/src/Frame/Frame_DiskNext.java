@@ -8,6 +8,10 @@
     아이템 보여주고 1번째는 아이템 번호, 2번째는 아이템 이름 
 */
 
+import java.awt.Image;
+import java.util.ArrayList;
+
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -86,15 +90,30 @@ public class Frame_DiskNext extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jLabel1.setFont(new java.awt.Font("맑은 고딕", 1, 18)); // NOI18N
-        jLabel1.setText("GPU");
+        jLabel1.setText("Disk");
 
         jLabel2.setFont(new java.awt.Font("맑은 고딕", 3, 18)); // NOI18N
         jLabel2.setText("아이템 추가는 소스에서 추가 가능");
-
-        Lbl_Disk4.setText("그림 넣어주세요4");
-
-        Lbl_Disk5.setText("그림 넣어주세요5");
-
+        
+        ImageIcon icon3 = new ImageIcon("C:\\test123\\Git_onboarding\\Fix_Error\\src\\Crucial P5Plus.jpeg");
+        Image Image3 = icon3.getImage();
+        Image resizeImage3 = Image3.getScaledInstance( 100, 90, Image.SCALE_SMOOTH);
+        ImageIcon resizedIcon3 = new ImageIcon(resizeImage3);
+        Lbl_Disk4.setIcon(resizedIcon3);
+        Lbl_Disk4.setText("");
+        
+        ImageIcon icon4 = new ImageIcon("C:\\test123\\Git_onboarding\\Fix_Error\\src\\Seagate Barracuda 4TB.jpeg");
+        Image Image4 = icon4.getImage();
+        Image resizeImage4 = Image4.getScaledInstance( 100, 90, Image.SCALE_SMOOTH);
+        ImageIcon resizedIcon4 = new ImageIcon(resizeImage4);
+        Lbl_Disk5.setIcon(resizedIcon4);
+        Lbl_Disk5.setText("");
+        
+        ImageIcon icon5 = new ImageIcon("C:\\test123\\Git_onboarding\\Fix_Error\\src\\Samsung 870 EVO.jpeg");
+        Image Image5 = icon5.getImage();
+        Image resizeImage5 = Image5.getScaledInstance( 100, 90, Image.SCALE_SMOOTH);
+        ImageIcon resizedIcon5 = new ImageIcon(resizeImage5);
+        Lbl_Disk6.setIcon(resizedIcon5);
         Lbl_Disk6.setText("그림 넣어주세요6");
 
         Lbl_Name4.setText("이름:");
@@ -129,51 +148,58 @@ public class Frame_DiskNext extends javax.swing.JFrame {
             }
         });
 
-        Btn_Selec4.setText("jButton1");
+        Btn_Selec4.setText("추가");
         Btn_Selec4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Btn_Selec4ActionPerformed(evt);
             }
         });
 
-        Btn_Selec5.setText("jButton1");
+        Btn_Selec5.setText("추가");
         Btn_Selec5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Btn_Selec5ActionPerformed(evt);
             }
         });
 
-        Btn_Selec6.setText("jButton1");
+        Btn_Selec6.setText("추가");
         Btn_Selec6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Btn_Selec6ActionPerformed(evt);
             }
         });
+        ArrayList<Disk_02> diskList = Disk_02.getDiskList();
+        Disk_02 disk = diskList.get(0);
+        Object[][] data = new Object[diskList.size()][5];
 
-        jLabel4.setText("이름1");
-
-        jLabel3.setText("가격1");
-
-        jLabel5.setText("정보1");
-
-        jLabel8.setText("설명1");
-
-        jLabel10.setText("이름2");
-
-        jLabel11.setText("가격2");
-
-        jLabel12.setText("정보2");
-
-        jLabel13.setText("설명2");
-
-        jLabel14.setText("이름3");
-
-        jLabel16.setText("가격3");
-
-        jLabel18.setText("정보3");
-
-        jLabel19.setText("설명3");
-
+        for (int i = 0; i < diskList.size(); i++) {
+        	Disk_02 ds = diskList.get(i);
+            data[i][0] = ds.getProdctid();
+            data[i][1] = ds.getDiskid();
+            data[i][2] = ds.getDiskdata();
+            data[i][3] = ds.getPrice();
+        }
+        if (diskList.size() > 3) {
+        	Disk_02 disk3 = diskList.get(3);
+        jLabel4.setText(disk3.getDiskid());
+        jLabel3.setText(disk3.getPrice());
+        jLabel5.setText(disk3.getProdctid());
+        jLabel8.setText(disk3.getDiskdata());
+        }
+        if (diskList.size() > 4) {
+        	Disk_02 disk4 = diskList.get(4);
+        jLabel10.setText(disk4.getDiskid());
+        jLabel11.setText(disk4.getPrice());
+        jLabel12.setText(disk4.getProdctid());
+        jLabel13.setText(disk4.getDiskdata());
+        }
+        if (diskList.size() > 5) {
+        	Disk_02 disk5 = diskList.get(5);
+        jLabel14.setText(disk5.getDiskid());
+        jLabel16.setText(disk5.getPrice());
+        jLabel18.setText(disk5.getProdctid());
+        jLabel19.setText(disk5.getDiskdata());
+        }
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -324,9 +350,10 @@ public class Frame_DiskNext extends javax.swing.JFrame {
 
     private void Button_PreviousActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_PreviousActionPerformed
         // TODO add your handling code here:
-        Frame_Disk pre = new Frame_Disk();
-        dispose();
-        pre.setVisible(true);
+    	Frame_Disk disk = new Frame_Disk();
+    	disk.setVisible(true);
+    	dispose();
+    	
     }//GEN-LAST:event_Button_PreviousActionPerformed
 
     private void Btn_Selec4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Selec4ActionPerformed
