@@ -324,6 +324,9 @@ public class Frame_DiskNext extends javax.swing.JFrame {
 
     private void Button_PreviousActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_PreviousActionPerformed
         // TODO add your handling code here:
+        Frame_Disk pre = new Frame_Disk();
+        dispose();
+        pre.setVisible(true);
     }//GEN-LAST:event_Button_PreviousActionPerformed
 
     private void Btn_Selec4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Selec4ActionPerformed

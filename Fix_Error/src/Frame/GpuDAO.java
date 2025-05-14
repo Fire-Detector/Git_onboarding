@@ -9,8 +9,7 @@ public class GpuDAO {
     private Connection getConnection() throws Exception {
         Class.forName("oracle.jdbc.driver.OracleDriver"); //오라클 드라이버 로딩
         return DriverManager.getConnection(
-            "jdbc:oracle:thin:@localhost:1521:xe", "admin", "12345"
-        );
+            "jdbc:oracle:thin:@localhost:1521:xe", "admin", "12345");
     }
 
     // 2. GPU 전체 목록 가져오기

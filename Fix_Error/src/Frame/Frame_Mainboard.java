@@ -9,16 +9,17 @@
 */
 
 
+
 /**
  *
  * @author 솔데스크
  */
-public class Frame_Mainboard extends javax.swing.JFrame {
+public class Frame_MainBoard extends javax.swing.JFrame {
 
     /**
      * Creates new form Frame_Cpu
      */
-    public Frame_Mainboard() {
+    public Frame_MainBoard() {
         initComponents();
     }
 
@@ -325,6 +326,9 @@ public class Frame_Mainboard extends javax.swing.JFrame {
 
     private void Button_NextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_NextActionPerformed
         // TODO add your handling code here:
+        Frame_MainBoradNext next = new Frame_MainBoradNext();
+        dispose();
+        next.setVisible(true);
     }//GEN-LAST:event_Button_NextActionPerformed
 
     private void Btn_Selec1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Selec1ActionPerformed
@@ -356,13 +360,13 @@ public class Frame_Mainboard extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Frame_Mainboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Frame_MainBoard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Frame_Mainboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Frame_MainBoard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Frame_Mainboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Frame_MainBoard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Frame_Mainboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Frame_MainBoard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
         //</editor-fold>
@@ -372,7 +376,7 @@ public class Frame_Mainboard extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Frame_Mainboard().setVisible(true);
+                new Frame_MainBoard().setVisible(true);
             }
         });
     }

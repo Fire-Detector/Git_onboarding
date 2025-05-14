@@ -9,6 +9,7 @@
 */
 
 
+
 /**
  *
  * @author 솔데스크
@@ -325,6 +326,9 @@ public class Frame_Ram extends javax.swing.JFrame {
 
     private void Button_NextActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Button_NextActionPerformed
         // TODO add your handling code here:
+        Frame_RamNext next = new Frame_RamNext();
+        dispose();
+        next.setVisible(true);
     }//GEN-LAST:event_Button_NextActionPerformed
 
     private void Btn_Selec1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_Selec1ActionPerformed
