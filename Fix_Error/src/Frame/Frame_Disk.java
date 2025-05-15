@@ -169,7 +169,7 @@ public class Frame_Disk extends javax.swing.JFrame {
                 Btn_Selec3ActionPerformed(evt);
             }
         });
- ArrayList<Disk_02> diskList = Disk_02.getDiskList();
+        ArrayList<Disk_02> diskList = Disk_02.getDiskList();
         Disk_02 disk = diskList.get(0);
         Object[][] data = new Object[diskList.size()][5];
 

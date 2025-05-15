@@ -8,6 +8,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 
 import javax.swing.JOptionPane;
+import javax.swing.JTextField;
 
 /**
  *
@@ -151,6 +152,9 @@ public class Frame_Register extends javax.swing.JFrame {
     }// </editor-fold>
 
     private void Register_IdActionPerformed(java.awt.event.ActionEvent evt) {
+        DB_Connect CheckId = new DB_Connect();
+
+        CheckId.IdCheck1(Register_Id.getText());
 
 
     }

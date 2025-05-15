@@ -168,5 +168,33 @@ public class DB_Connect {
         return hasLetter && hasDigit && hasSpecial;
 
     }
+
+	//아이디 중복확인 : 김정연
+   public boolean IdCheck1(String userid ){
+
+      boolean result = false;
+      Connection con = null;
+      Password_01 userDto = null;
+
+      try {
+         String sql = "SELECT userid FROM usertbl WHERE userid=?";
+         PreparedStatement pstmt = con.prepareStatement(sql);
+         pstmt.setString(1, userid);
+         ResultSet rs = pstmt.executeQuery();
+         if(rs.next()){
+            userDto = new Password_01();
+            userDto.setUserid(rs.getString("userid"));
+
+            if(userDto.getPassword().equals(userid)){
+               result = true;  //중복이 있으면 ture값을
+            }
+         }
+
+      } catch (Exception e) {
+         e.printStackTrace();
+      }
+      return result;
+
+   }
 	
 }
