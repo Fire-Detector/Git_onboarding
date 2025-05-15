@@ -19,7 +19,12 @@
   5. 커밋 할 경우 메시지 변경사항 짧게나마 넣어두기
   6. 데이터베이스 사용할 때마다 connect 하는데 connect는 한번만 선언하고 다 끝나고 종료여서 login, register쪽에만 선언함
   */
-
+/*
+ * 남은 기본 기능:
+ * 1. 마이페이지 (쿼리 부분 작성 완료)
+ * 2. 회원가입 (쿼리는 작성 완료)
+ * 3. 로그인 체크 (옆에서 하는 중)
+ */
 
 
 import java.sql.Connection;
@@ -32,11 +37,11 @@ import java.util.List;
 
 
 public class DB_Connect {
-	private String DB_Driver;
-	private String DB_Url;
-	private String DB_Username;
-	private String DB_Password;
-	private Connection conn;
+	private String DB_Driver = null;
+	private String DB_Url= null;
+	private String DB_Username= null;
+	private String DB_Password= null;
+	private Connection conn= null;
 
 
 	//데이터 베이스 연동: 전원
@@ -45,8 +50,6 @@ public class DB_Connect {
 		this.DB_Url = "jdbc:oracle:thin:@localhost:1521:xe";
 		this.DB_Username = "system";
 		this.DB_Password = "12345";
-
-		Connection conn = null;
 		try {
 
 			Class.forName(DB_Driver);
@@ -88,6 +91,7 @@ public class DB_Connect {
 		return result;
 
 	}
+
 //마이페이지 창: 나세종, 호재영, 이재준
 	public List<UserDTO> My_Page(String User_id) throws SQLException {
 		String sql = "SELECT user_id, user_phone, user_adress from user_tbl where customer_id=?";
@@ -147,8 +151,8 @@ public class DB_Connect {
 	}// getAllGpus()
 
 	// 회원가입: 나세종
-	public void Register(String User_id, String User_Password, String User_Name, String User_Phone, String User_Adress, boolean check) throws SQLException{
-		String sql = "INSERT INTO User_tbl VALUES User_Id = ?, User_Pwd = ?, User_Name = ?, User_Phone = ?, User_Address = ?";
+	public void Register(String User_id, String User_Password, String User_Name, String Male, boolean check) throws SQLException{
+		String sql = "INSERT INTO User_tbl VALUES User_Id = ?, User_Pwd = ?, User_Name = ?, Sexual = ?";
 		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
@@ -157,10 +161,26 @@ public class DB_Connect {
 			pstmt.setString(1, User_id);
 			pstmt.setString(2, User_Password);
 			pstmt.setString(3, User_Name);
-			pstmt.setString(4, User_Phone);
-			pstmt.setString(5, User_Adress);
+			pstmt.setString(4, Male);
 		}
 
 	}
+	// 로그인 체크: 호재영
+	public boolean IdCheck(String user_id){
+		String sql = "SELECT userid User_tbl Values User_id = ?";
 
+		return false;
+	}
+	
+	    public boolean isValidPassword(String pw) {
+        if (pw.length() < 8)
+            return false;
+
+        boolean hasLetter = pw.matches(".*[a-zA-Z].*");
+        boolean hasDigit = pw.matches(".*\\d.*");
+        boolean hasSpecial = pw.matches(".*[!@#$%^&*()].*");
+
+        return hasLetter && hasDigit && hasSpecial;
+
+    }
 }

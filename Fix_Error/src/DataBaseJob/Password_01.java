@@ -1,8 +1,6 @@
 /*
  * 제작 인원: 이재준
  */
-
-
 public class Password_01 {
 	
 	private String userid;

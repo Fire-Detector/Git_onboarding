@@ -7,6 +7,7 @@ public class UserDTO {
     private String User_id;
     private String User_name;
     private String User_phone;
+    
 
     // 생성자
     //this.XXX는 현재 객체의 필드를 가리키고, 오른쪽 XXX는 파라미터
