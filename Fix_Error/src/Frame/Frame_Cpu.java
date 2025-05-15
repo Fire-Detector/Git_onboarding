@@ -2,11 +2,20 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
+ // 패키지 경로에 맞춰 수정
 
 
 /*
     아이템 보여주고 1번째는 아이템 번호, 2번째는 아이템 이름 
 */
+
+import java.awt.Image;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.swing.ImageIcon;
+import javax.xml.crypto.Data;
+
 
 
 /**
@@ -93,10 +102,20 @@ public class Frame_Cpu extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("맑은 고딕", 3, 18)); // NOI18N
         jLabel2.setText("아이템 추가는 소스에서 추가 가능");
 
+        ImageIcon cpuImg1 = new ImageIcon("Fix_Error\\src\\cpu1.png");
+        Image scaled1 = cpuImg1.getImage().getScaledInstance(100, 100, Image.SCALE_SMOOTH);
+        Lbl_Cpu1.setIcon(new ImageIcon(scaled1));
+        Lbl_Cpu1.setText("");
         Lbl_Cpu1.setText("그림 넣어주세요1");
-
+        ImageIcon cpuImg2 = new ImageIcon("Fix_Error\\src\\cpu2.png");
+        Image scaled2 = cpuImg2.getImage().getScaledInstance(100, 100, Image.SCALE_SMOOTH);
+        Lbl_Cpu2.setIcon(new ImageIcon(scaled2));
+        Lbl_Cpu2.setText("");
         Lbl_Cpu2.setText("그림 넣어주세요2");
-
+        ImageIcon cpuImg3 = new ImageIcon("Fix_Error\\src\\cpu3.png");
+        Image scaled3 = cpuImg3.getImage().getScaledInstance(100, 100, Image.SCALE_SMOOTH);
+        Lbl_Cpu3.setIcon(new ImageIcon(scaled3));
+        Lbl_Cpu3.setText("");
         Lbl_Cpu3.setText("그림 넣어주세요3");
 
         Lbl_Name1.setText("이름:");
@@ -151,31 +170,38 @@ public class Frame_Cpu extends javax.swing.JFrame {
                 Btn_Selec3ActionPerformed(evt);
             }
         });
+        ArrayList<CPU_DB> cpulList = CPU_DB.getCpulist(); 
+        CPU_DB listDb = cpulList.get(0);
+        Object[][] ob = new Object[cpulList.size()][5];
 
-        jLabel4.setText("이름1");
+        for (int i = 0; i < cpulList.size(); i++) {
+            CPU_DB cpu = cpulList.get(i);
+            ob [i][0] = cpu.getcpuprodctid();
+            ob [i][1] = cpu.getcpuid();
+            ob [i][2] = cpu.getcpudata();
+            ob [i][3] = cpu.getcpuprice();
+        }
 
-        jLabel3.setText("가격1");
+        jLabel4.setText(listDb.getcpuid());
+        jLabel3.setText(listDb.getcpuprice());
+        jLabel5.setText(listDb.getcpuprodctid());
+        jLabel8.setText(listDb.getcpudata());
 
-        jLabel5.setText("정보1");
+        if(cpulList.size() > 1){
+        CPU_DB listDb1 = cpulList.get(1);
+        jLabel10.setText(listDb1.getcpuid());
+        jLabel11.setText(listDb1.getcpuprice());
+        jLabel12.setText(listDb1.getcpuprodctid());
+        jLabel13.setText(listDb1.getcpudata());
+        }
 
-        jLabel8.setText("설명1");
-
-        jLabel10.setText("이름2");
-
-        jLabel11.setText("가격2");
-
-        jLabel12.setText("정보2");
-
-        jLabel13.setText("설명2");
-
-        jLabel14.setText("이름3");
-
-        jLabel16.setText("가격3");
-
-        jLabel18.setText("정보3");
-
-        jLabel19.setText("설명3");
-
+        if(cpulList.size() > 2){
+        CPU_DB listDb2 = cpulList.get(2);
+        jLabel14.setText(listDb2.getcpuid());
+        jLabel16.setText(listDb2.getcpuprice());
+        jLabel18.setText(listDb2.getcpuprodctid());
+        jLabel19.setText(listDb2.getcpudata());
+        }
         Btn_MoveSelect.setText("초기화면");
         Btn_MoveSelect.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

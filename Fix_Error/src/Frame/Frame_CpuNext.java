@@ -8,6 +8,10 @@
     아이템 보여주고 1번째는 아이템 번호, 2번째는 아이템 이름 
 */
 
+import java.awt.Image;
+import java.util.ArrayList;
+
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -90,11 +94,22 @@ public class Frame_CpuNext extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("맑은 고딕", 3, 18)); // NOI18N
         jLabel2.setText("아이템 추가는 소스에서 추가 가능");
-
+        ImageIcon cpuImg4 = new ImageIcon("Fix_Error\\src\\cpu4.jpg");
+        Image scaled4 = cpuImg4.getImage().getScaledInstance(100, 100, Image.SCALE_SMOOTH);
+        Lbl_Cpu4.setIcon(new ImageIcon(scaled4));
+        Lbl_Cpu4.setText("");
         Lbl_Cpu4.setText("그림 넣어주세요4");
 
+        ImageIcon cpuImg5 = new ImageIcon("Fix_Error\\src\\cpu5.jpg");
+        Image scaled5 = cpuImg5.getImage().getScaledInstance(100, 100, Image.SCALE_SMOOTH);
+        Lbl_Cpu5.setIcon(new ImageIcon(scaled5));
+        Lbl_Cpu5.setText("");
         Lbl_Cpu5.setText("그림 넣어주세요5");
 
+        ImageIcon cpuImg6 = new ImageIcon("Fix_Error\\src\\cpu6.png");
+        Image scaled6 = cpuImg6.getImage().getScaledInstance(100, 100, Image.SCALE_SMOOTH);
+        Lbl_Cpu6.setIcon(new ImageIcon(scaled6));
+        Lbl_Cpu6.setText("");
         Lbl_Cpu6.setText("그림 넣어주세요6");
 
         Lbl_Name4.setText("이름:");
@@ -149,30 +164,39 @@ public class Frame_CpuNext extends javax.swing.JFrame {
                 Btn_Selec6ActionPerformed(evt);
             }
         });
+        ArrayList<CPU_DB> cpulList = CPU_DB.getCpulist(); 
+        CPU_DB listDb = cpulList.get(0);
+        Object[][] ob = new Object[cpulList.size()][5];
+        for (int i = 0; i < cpulList.size(); i++){
+            CPU_DB cpu = cpulList.get(i);
+            ob [i][0] = cpu.getcpuprodctid();
+            ob [i][1] = cpu.getcpuid();
+            ob [i][2] = cpu.getcpudata();
+            ob [i][3] = cpu.getcpuprice();
+        }
+        if(cpulList.size()>3){  
+        CPU_DB listDb3 = cpulList.get(3);             
+        jLabel4.setText(listDb3.getcpuid());
+        jLabel3.setText(listDb3.getcpuprice());
+        jLabel5.setText(listDb3.getcpuprodctid());
+        jLabel8.setText(listDb3.getcpudata());
+        }
 
-        jLabel4.setText("이름1");
+        if(cpulList.size()>4){  
+        CPU_DB listDb4 = cpulList.get(4);             
+        jLabel10.setText(listDb4.getcpuid());
+        jLabel11.setText(listDb4.getcpuprice());
+        jLabel12.setText(listDb4.getcpuprodctid());
+        jLabel13.setText(listDb4.getcpudata());
+        }
 
-        jLabel3.setText("가격1");
-
-        jLabel5.setText("정보1");
-
-        jLabel8.setText("설명1");
-
-        jLabel10.setText("이름2");
-
-        jLabel11.setText("가격2");
-
-        jLabel12.setText("정보2");
-
-        jLabel13.setText("설명2");
-
-        jLabel14.setText("이름3");
-
-        jLabel16.setText("가격3");
-
-        jLabel18.setText("정보3");
-
-        jLabel19.setText("설명3");
+      if(cpulList.size()>5){  
+        CPU_DB listDb5 = cpulList.get(5);             
+        jLabel14.setText(listDb5.getcpuid());
+        jLabel16.setText(listDb5.getcpuprice());
+        jLabel18.setText(listDb5.getcpuprodctid());
+        jLabel19.setText(listDb5.getcpudata());
+        }
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

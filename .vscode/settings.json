@@ -1,0 +1,10 @@
+{
+    "java.project.sourcePaths": [
+        "Fix_Error\\src\\DataBaseJob",
+        "Fix_Error\\src\\Frame",
+        "Fix_Error\\src\\Main"
+    ],
+    "java.project.referencedLibraries": [
+        "c:\\app\\soldesk\\product\\18.0.0\\dbhomeXE\\jdbc\\lib\\ojdbc8.jar"
+    ]
+}
