@@ -1,4 +1,5 @@
 public class Disk_01 {
+    
     private String prodctid;
     private String diskid;
     private String diskdata;
