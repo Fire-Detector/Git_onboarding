@@ -18,6 +18,7 @@ public class Frame_Register extends javax.swing.JFrame {
     /**
      * Creates new form Frame_Register
      */
+	boolean a;
     public Frame_Register() {
         initComponents();
     }
@@ -30,7 +31,6 @@ public class Frame_Register extends javax.swing.JFrame {
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">
     private void initComponents() {
-
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -63,6 +63,7 @@ public class Frame_Register extends javax.swing.JFrame {
                 Register_IdActionPerformed(evt);
             }
         });
+        
 
         Register_Btn.setText("회원가입");
         Register_Btn.addActionListener(new java.awt.event.ActionListener() {
@@ -74,6 +75,11 @@ public class Frame_Register extends javax.swing.JFrame {
         jLabel5.setText("회원가입창");
 
         Register_Check.setText("중복확인");
+        Register_Check.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Register_CheckActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -154,10 +160,21 @@ public class Frame_Register extends javax.swing.JFrame {
     private void Register_IdActionPerformed(java.awt.event.ActionEvent evt) {
         DB_Connect CheckId = new DB_Connect();
 
-        CheckId.IdCheck1(Register_Id.getText());
+        this.a = CheckId.IdCheck1(Register_Id.getText());
+        System.out.println(a);
 
 
     }
+    private void Register_CheckActionPerformed(java.awt.event.ActionEvent evt) {
+        DB_Connect CheckId = new DB_Connect();
+        CheckId.getConnection();
+
+        this.a = CheckId.IdCheck1(Register_Id.getText());
+        System.out.println(a);
+
+
+    }
+
 
     private void Register_BtnActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_Register_BtnActionPerformed
         // TODO add your handling code here:
@@ -201,7 +218,7 @@ public class Frame_Register extends javax.swing.JFrame {
 
             // DB 연결
             Connection conn = DriverManager.getConnection(
-                    "jdbc:oracle:thin:@localhost:1521:xe", "admin", "12345");
+                    "jdbc:oracle:thin:@localhost:1521:xe", "member", "12345");
 
             // SQL 준비
             String sql = "INSERT INTO MEMBERS (member_id, password, phone, gender) VALUES (?, ?, ?, ?)";

@@ -105,7 +105,7 @@ public class Frame_Login extends javax.swing.JFrame {
         DB_Connect con = new DB_Connect();
         Frame_MyPage Page = new Frame_MyPage();
         con.getConnection();
-<<<<<<< HEAD
+
         if (con.login(userid, inputPw)) {
             JOptionPane.showMessageDialog(this, "로그인 성공");
             dispose();
@@ -113,20 +113,11 @@ public class Frame_Login extends javax.swing.JFrame {
         } else {
             JOptionPane.showMessageDialog(this, "아이디 또는 비밀번호가 틀렸습니다.");
         }
-=======
-    	if (con.login(userid, inputPw)) {
-    		JOptionPane.showMessageDialog(this, "로그인 성공");
-    		dispose();
-    	    new Frame_Select().setVisible(true);
-            Page.setting(userid);
-    	}else {
-    		JOptionPane.showMessageDialog(this, "아이디 또는 비밀번호가 틀렸습니다.");
-    	}
+    	
         
     }                                         
->>>>>>> 4356b91d94c52a73715d08477f8e4db6adafe914
 
-    }
+   
 
     private void Btn_RegisterActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:

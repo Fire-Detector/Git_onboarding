@@ -25,9 +25,9 @@ public class UserDAO {
         ) {
         	//4. 결과를 GpuDTO 객체로 변환
             while (rs.next()) {
-                String UserId = rs.getString("UserID");
-                String UserName = rs.getString("UserName");
-                String UserPhone = rs.getString("UserPhone");
+                String UserId = rs.getString("gender");
+                String UserName = rs.getString("name");
+                String UserPhone = rs.getString("phone");
 
                 UserDTO User = new UserDTO(UserId, UserName, UserPhone);// DTO로 포장
                 list.add(User);// 리스트에 넣기

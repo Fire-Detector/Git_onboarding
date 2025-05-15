@@ -33,7 +33,7 @@ public class MainBoard_02 {
         ArrayList<MainBoard_02> list = new ArrayList<>();
         try {
         	Connection con = DriverManager.getConnection(
-        	"jdbc:oracle:thin:@localhost:1521:xe", "member", "12345");
+        	"jdbc:oracle:thin:@localhost:1521:xe", "admin", "12345");
             
             String sql = "SELECT * FROM mainboard";
             PreparedStatement pstmt = con.prepareStatement(sql);

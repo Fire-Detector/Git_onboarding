@@ -89,7 +89,7 @@ public class Frame_MainBoard extends javax.swing.JFrame {
         jButton2.setText("jButton1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(450, 480));
+        setPreferredSize(new java.awt.Dimension(500, 500));
 
         jLabel1.setFont(new java.awt.Font("맑은 고딕", 1, 18)); // NOI18N
         jLabel1.setText("GPU");
@@ -122,11 +122,6 @@ public class Frame_MainBoard extends javax.swing.JFrame {
         Lbl_MainBoard3.setText("");
 
 
-        Lbl_MainBoard1.setText("그림 넣어주세요1");
-
-        Lbl_MainBoard2.setText("그림 넣어주세요2");
-
-        Lbl_MainBoard3.setText("그림 넣어주세요3");
 
         Lbl_Name1.setText("이름:");
 
@@ -216,29 +211,7 @@ public class Frame_MainBoard extends javax.swing.JFrame {
         
         
 
-        jLabel4.setText("이름1");
-
-        jLabel3.setText("가격1");
-
-        jLabel5.setText("정보1");
-
-        jLabel8.setText("설명1");
-
-        jLabel10.setText("이름2");
-
-        jLabel11.setText("가격2");
-
-        jLabel12.setText("정보2");
-
-        jLabel13.setText("설명2");
-
-        jLabel14.setText("이름3");
-
-        jLabel16.setText("가격3");
-
-        jLabel18.setText("정보3");
-
-        jLabel19.setText("설명3");
+       
 
         Btn_MoveSelect.setText("초기화면");
         Btn_MoveSelect.addActionListener(new java.awt.event.ActionListener() {
@@ -388,7 +361,7 @@ public class Frame_MainBoard extends javax.swing.JFrame {
                                         .addComponent(jLabel5)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                         .addComponent(jLabel8)))
-                                .addGap(18, 18, 18)))
+                                .addGap(29, 29, 29)))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(Btn_MoveSelect, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(Button_Next, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))

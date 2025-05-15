@@ -48,7 +48,7 @@ public class DB_Connect {
 	public void getConnection() {
 		this.DB_Driver = "oracle.jdbc.OracleDriver";
 		this.DB_Url = "jdbc:oracle:thin:@localhost:1521:xe";
-		this.DB_Username = "system";
+		this.DB_Username = "member";
 		this.DB_Password = "12345";
 		try {
 
@@ -67,18 +67,17 @@ public class DB_Connect {
 // 로그인 파트: 이재준
 	public boolean login(String userid, String inputPw) {
 		boolean result = false;
-		Connection con = null;
 		Password_01 userDto = null;
 
 		try {
-			String sql = "SELECT userid,password FROM  usertbl WHERE userid=?";
-			PreparedStatement pstmt = con.prepareStatement(sql);
+			String sql = "SELECT member_id ,password FROM usertbl WHERE member_id=?";
+			PreparedStatement pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, userid);
 			ResultSet rs = pstmt.executeQuery();
 
 			if (rs.next()) {
 				userDto = new Password_01();
-				userDto.setUserid(rs.getString("userid"));
+				userDto.setUserid(rs.getString("member_id"));
 				userDto.setPassword(rs.getString("password"));
 
 				if (userDto.getPassword().equals(inputPw)) {
@@ -95,7 +94,6 @@ public class DB_Connect {
 //마이페이지 창: 나세종, 호재영, 이재준
 	public List<UserDTO> My_Page(String User_id) throws SQLException {
 		String sql = "SELECT user_id, user_phone, user_adress from user_tbl where customer_id=?";
-		Connection conn = null;
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		List<UserDTO> list = new ArrayList<>();
@@ -152,7 +150,7 @@ public class DB_Connect {
 
 	// 로그인 체크: 호재영
 	public boolean IdCheck(String user_id){
-		String sql = "SELECT userid User_tbl Values User_id = ?";
+		String sql = "SELECT userid usertbl Values usertbl = ?";
 
 		return false;
 	}
@@ -173,23 +171,18 @@ public class DB_Connect {
    public boolean IdCheck1(String userid ){
 
       boolean result = false;
-      Connection con = null;
-      Password_01 userDto = null;
-
+      
       try {
-         String sql = "SELECT userid FROM usertbl WHERE userid=?";
-         PreparedStatement pstmt = con.prepareStatement(sql);
+         String sql = "SELECT member_id FROM usertbl WHERE member_id=?";
+         PreparedStatement pstmt = conn.prepareStatement(sql);
          pstmt.setString(1, userid);
          ResultSet rs = pstmt.executeQuery();
-         if(rs.next()){
-            userDto = new Password_01();
-            userDto.setUserid(rs.getString("userid"));
-
-            if(userDto.getPassword().equals(userid)){
-               result = true;  //중복이 있으면 ture값을
-            }
+         if(rs.next()) {
+        	 javax.swing.JOptionPane.showConfirmDialog(null, "사용중인 아이디 입니다", "중복확인",javax.swing.JOptionPane.WARNING_MESSAGE);
+        	 return true;
+         }else {
+        	 return false;
          }
-
       } catch (Exception e) {
          e.printStackTrace();
       }

@@ -169,10 +169,7 @@ public class Frame_Disk extends javax.swing.JFrame {
                 Btn_Selec3ActionPerformed(evt);
             }
         });
-<<<<<<< HEAD
-        
-=======
->>>>>>> 4356b91d94c52a73715d08477f8e4db6adafe914
+
         ArrayList<Disk_02> diskList = Disk_02.getDiskList();
         Disk_02 disk = diskList.get(0);
         Object[][] data = new Object[diskList.size()][5];
@@ -360,6 +357,7 @@ public class Frame_Disk extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(Button_Next, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(Btn_MoveSelect, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGap(24, 24, 24)
                 .addContainerGap(24, Short.MAX_VALUE))
         );
 

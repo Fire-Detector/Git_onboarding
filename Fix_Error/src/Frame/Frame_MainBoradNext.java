@@ -102,7 +102,7 @@ public class Frame_MainBoradNext extends javax.swing.JFrame {
         Lbl_MainBoard4.setIcon(resizedIcon3);
         Lbl_MainBoard4.setText("");
 
-        ImageIcon icon4 = new ImageIcon("C:\\Users\\soldesk\\Desktop\\git\\Git_onboarding-main\\Git_onboarding_fin\\Fix_Error\\src\\Gigabyte AORUS X890 Master.JPG");
+        ImageIcon icon4 = new ImageIcon("C:\\test1234\\Git_onboarding\\Fix_Error\\src\\MSI MAG Z890 TOMAHAWK WIFI.JPG");
         Image Image4 = icon4.getImage();
         Image resizeImage4= Image4.getScaledInstance( 100, 80, Image.SCALE_SMOOTH);
         ImageIcon resizedIcon4 = new ImageIcon(resizeImage4);
@@ -155,11 +155,6 @@ public class Frame_MainBoradNext extends javax.swing.JFrame {
         jLabel19.setText(mb5.getmbdata());
         }
 
-        Lbl_MainBoard4.setText("그림 넣어주세요4");
-
-        Lbl_MainBoard5.setText("그림 넣어주세요5");
-
-        Lbl_MainBoard6.setText("그림 넣어주세요6");
 
         Lbl_Name4.setText("이름:");
 
@@ -214,29 +209,7 @@ public class Frame_MainBoradNext extends javax.swing.JFrame {
             }
         });
 
-        jLabel4.setText("이름1");
-
-        jLabel3.setText("가격1");
-
-        jLabel5.setText("정보1");
-
-        jLabel8.setText("설명1");
-
-        jLabel10.setText("이름2");
-
-        jLabel11.setText("가격2");
-
-        jLabel12.setText("정보2");
-
-        jLabel13.setText("설명2");
-
-        jLabel14.setText("이름3");
-
-        jLabel16.setText("가격3");
-
-        jLabel18.setText("정보3");
-
-        jLabel19.setText("설명3");
+       
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

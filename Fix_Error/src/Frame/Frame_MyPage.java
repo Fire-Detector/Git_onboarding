@@ -43,10 +43,10 @@ public class Frame_MyPage extends javax.swing.JFrame {
         Btn_Selec = new javax.swing.JButton();
         DB_Connect DB = new DB_Connect();
         DB.getConnection();
-        ArrayList<UserDAO> userList = UserDAO.getAllUser();
-        UserDAO disk = userList.get(0);
+        ArrayList<UserDTO> userList = UserDAO.getAllUser();
+        UserDTO disk = userList.get(0);
         Object[][] data = new Object[userList.size()][5];
-        UserDAO ds = userList.get(1);
+        UserDTO ds = userList.get(1);
 
 
 
@@ -136,6 +136,9 @@ public class Frame_MyPage extends javax.swing.JFrame {
 
     private void Btn_SelecActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Btn_SelecActionPerformed
         // TODO add your handling code here:
+    	Frame_Select next = new Frame_Select();
+    	dispose();
+    	next.setVisible(true);
     }//GEN-LAST:event_Btn_SelecActionPerformed
 
     /**
