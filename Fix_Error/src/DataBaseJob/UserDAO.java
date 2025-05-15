@@ -6,7 +6,7 @@ import java.util.List;      // 리스트 타입을 다루기 위한 인터페이
 public class UserDAO {
 
     // 1. DB 연결용 메서드(매번 DB 연결하는 코드 중복 방지)
-    private Connection getConnection() throws Exception {
+    private static Connection getConnection() throws Exception {
         Class.forName("oracle.jdbc.driver.OracleDriver"); //오라클 드라이버 로딩
         return DriverManager.getConnection(
             "jdbc:oracle:thin:@localhost:1521:xe", "member", "12345"
@@ -14,7 +14,7 @@ public class UserDAO {
     }
 
     // 2. GPU 전체 목록 가져오기
-    public List<UserDTO> getAllUser() { //getAllGpus()메소드: GpuDTO객체 리스트를 반환
+    public static ArrayList<UserDTO> getAllUser() { //getAllGpus()메소드: GpuDTO객체 리스트를 반환
         ArrayList<UserDTO> list = new ArrayList<>(); //GpuDTO라는 객체들을 담을 수 있는 비어있는 리스트 생성
 
         try (

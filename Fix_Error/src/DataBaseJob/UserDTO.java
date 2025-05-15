@@ -24,8 +24,4 @@ public class UserDTO {
     public String getName() { return User_name; }
     public String getUser_Phone() { return User_phone; }
 
-    public static List<UserDTO> getAllUser() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getAllUser'");
-    }
 }

@@ -43,10 +43,10 @@ public class Frame_MyPage extends javax.swing.JFrame {
         Btn_Selec = new javax.swing.JButton();
         DB_Connect DB = new DB_Connect();
         DB.getConnection();
-        List<UserDTO> userList = UserDTO.getAllUser();
-        UserDTO disk = userList.get(0);
+        ArrayList<UserDAO> userList = UserDAO.getAllUser();
+        UserDAO disk = userList.get(0);
         Object[][] data = new Object[userList.size()][5];
-        UserDTO ds = userList.get(1);
+        UserDAO ds = userList.get(1);
 
 
 
