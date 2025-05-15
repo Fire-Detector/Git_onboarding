@@ -8,6 +8,10 @@
     아이템 보여주고 1번째는 아이템 번호, 2번째는 아이템 이름 
 */
 
+import java.awt.Image;
+import java.util.ArrayList;
+
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -93,6 +97,31 @@ public class Frame_MainBoard extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("맑은 고딕", 3, 18)); // NOI18N
         jLabel2.setText("아이템 추가는 소스에서 추가 가능");
 
+        
+
+        ImageIcon icon = new ImageIcon("C:\\Users\\soldesk\\Desktop\\git\\Git_onboarding-main\\Git_onboarding_fin\\Fix_Error\\src\\ASRock B760M Pro-A.JPG");
+        Image Image = icon.getImage();
+        Image resizeImage = Image.getScaledInstance( 100, 80, Image.SCALE_SMOOTH);
+        ImageIcon resizedIcon = new ImageIcon(resizeImage);
+        Lbl_MainBoard1.setIcon(resizedIcon);
+        Lbl_MainBoard1.setText("");
+
+
+        ImageIcon icon1 = new ImageIcon("C:\\Users\\soldesk\\Desktop\\git\\Git_onboarding-main\\Git_onboarding_fin\\Fix_Error\\src\\ASUS ROG Strix Z890-E Gaming WiFi.JPG");
+        Image Image1 = icon1.getImage();
+        Image resizeImage1 = Image1.getScaledInstance( 100, 80, Image.SCALE_SMOOTH);
+        ImageIcon resizedIcon1 = new ImageIcon(resizeImage1);
+        Lbl_MainBoard2.setIcon(resizedIcon1);
+        Lbl_MainBoard2.setText("");
+
+        ImageIcon icon2 = new ImageIcon("C:\\Users\\soldesk\\Desktop\\git\\Git_onboarding-main\\Git_onboarding_fin\\Fix_Error\\src\\ASUS TUF Gaming B650M-PLUS WiFi.JPG");
+        Image Image2 = icon2.getImage();
+        Image resizeImage2 = Image2.getScaledInstance( 100, 80, Image.SCALE_SMOOTH);
+        ImageIcon resizedIcon2 = new ImageIcon(resizeImage2);
+        Lbl_MainBoard3.setIcon(resizedIcon2);
+        Lbl_MainBoard3.setText("");
+
+
         Lbl_MainBoard1.setText("그림 넣어주세요1");
 
         Lbl_MainBoard2.setText("그림 넣어주세요2");
@@ -151,6 +180,41 @@ public class Frame_MainBoard extends javax.swing.JFrame {
                 Btn_Selec3ActionPerformed(evt);
             }
         });
+
+        
+        ArrayList<MainBoard_02> MainBoardList = MainBoard_02.getMainBoardList();
+        MainBoard_02 mainboard = MainBoardList.get(0);
+        Object[][] data = new Object[MainBoardList.size()][5];
+
+        for (int i = 0; i < MainBoardList.size(); i++) {
+        	MainBoard_02 mb = MainBoardList.get(i);
+            data[i][0] = mb.getobid();
+            data[i][1] = mb.getmbid();
+            data[i][2] = mb.getmbdata();
+            data[i][3] = mb.getPrice();
+        }
+        jLabel4.setText(mainboard.getmbid());
+        jLabel3.setText(mainboard.getPrice());
+        jLabel5.setText(mainboard.getobid());
+        jLabel8.setText(mainboard.getmbdata());
+        
+        if (MainBoardList.size() > 1) {
+        MainBoard_02 mb1 = MainBoardList.get(1);
+        jLabel10.setText(mb1.getmbid());
+        jLabel11.setText(mb1.getPrice());
+        jLabel12.setText(mb1.getobid());
+        jLabel13.setText(mb1.getmbdata());
+        }
+
+        if (MainBoardList.size() > 2) {
+        MainBoard_02 mb2 = MainBoardList.get(2);
+        jLabel14.setText(mb2.getmbid());
+        jLabel16.setText(mb2.getPrice());
+        jLabel18.setText(mb2.getobid());
+        jLabel19.setText(mb2.getmbdata());
+        }
+        
+        
 
         jLabel4.setText("이름1");
 
