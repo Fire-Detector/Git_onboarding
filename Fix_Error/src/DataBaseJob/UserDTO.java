@@ -2,6 +2,8 @@
  * 제작 인원: 나세종, 호재영, 이재준
  */
 
+import java.util.List;
+
 public class UserDTO {
     
     private String User_id;
@@ -18,7 +20,8 @@ public class UserDTO {
     }
 
     // getter(외부에서 GPU 객체의 정보를 꺼낼 때 사용)
-    public String getProductID() { return User_id; }
+    public String getUser_Id() { return User_id; }
     public String getName() { return User_name; }
-    public String getPerformance() { return User_phone; }
+    public String getUser_Phone() { return User_phone; }
+
 }

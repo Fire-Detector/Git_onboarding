@@ -8,6 +8,7 @@
     아이템 보여주고 1번째는 아이템 번호, 2번째는 아이템 이름 
 */
 
+import java.util.ArrayList;
 
 /**
  *
@@ -149,30 +150,42 @@ public class Frame_GpuNext extends javax.swing.JFrame {
                 Btn_Selec6ActionPerformed(evt);
             }
         });
+        
+        ArrayList<Disk_02> diskList = Disk_02.getDiskList();
+        Disk_02 disk = diskList.get(0);
+        Object[][] data = new Object[diskList.size()][11];
 
-        jLabel4.setText("이름1");
-
-        jLabel3.setText("가격1");
-
-        jLabel5.setText("정보1");
-
-        jLabel8.setText("설명1");
-
-        jLabel10.setText("이름2");
-
-        jLabel11.setText("가격2");
-
-        jLabel12.setText("정보2");
-
-        jLabel13.setText("설명2");
-
-        jLabel14.setText("이름3");
-
-        jLabel16.setText("가격3");
-
-        jLabel18.setText("정보3");
-
-        jLabel19.setText("설명3");
+        for (int i = 0; i < diskList.size(); i++) {
+        	Disk_02 ds = diskList.get(i);
+            data[i][0] = ds.getProdctid();
+            data[i][1] = ds.getDiskid();
+            data[i][2] = ds.getDiskdata();
+            data[i][3] = ds.getPrice();
+        }
+        
+        if (diskList.size() > 9) {
+        	Disk_02 disk9 = diskList.get(9);
+        jLabel4.setText(disk9.getDiskid());
+        jLabel3.setText(disk9.getPrice());
+        jLabel5.setText(disk9.getProdctid());
+        jLabel8.setText(disk9.getDiskdata());
+        }
+        
+        if (diskList.size() > 10) {
+        	Disk_02 disk10 = diskList.get(10);
+        jLabel10.setText(disk10.getDiskid());
+        jLabel11.setText(disk10.getPrice());
+        jLabel12.setText(disk10.getProdctid());
+        jLabel13.setText(disk10.getDiskdata());
+        }
+        
+        if (diskList.size() > 11) {
+        	Disk_02 disk11 = diskList.get(11);
+        jLabel14.setText(disk11.getDiskid());
+        jLabel16.setText(disk11.getPrice());
+        jLabel18.setText(disk11.getProdctid());
+        jLabel19.setText(disk11.getDiskdata());
+        }
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

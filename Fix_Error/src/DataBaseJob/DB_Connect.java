@@ -150,21 +150,6 @@ public class DB_Connect {
 		return list;
 	}// getAllGpus()
 
-	// 회원가입: 나세종
-	public void Register(String User_id, String User_Password, String User_Name, String Male, boolean check) throws SQLException{
-		String sql = "INSERT INTO User_tbl VALUES User_Id = ?, User_Pwd = ?, User_Name = ?, Sexual = ?";
-		Connection conn = null;
-		PreparedStatement pstmt = null;
-		ResultSet rs = null;
-		if(check){
-			pstmt = conn.prepareStatement(sql);
-			pstmt.setString(1, User_id);
-			pstmt.setString(2, User_Password);
-			pstmt.setString(3, User_Name);
-			pstmt.setString(4, Male);
-		}
-
-	}
 	// 로그인 체크: 호재영
 	public boolean IdCheck(String user_id){
 		String sql = "SELECT userid User_tbl Values User_id = ?";
@@ -183,4 +168,33 @@ public class DB_Connect {
         return hasLetter && hasDigit && hasSpecial;
 
     }
+
+	//아이디 중복확인 : 김정연
+   public boolean IdCheck1(String userid ){
+
+      boolean result = false;
+      Connection con = null;
+      Password_01 userDto = null;
+
+      try {
+         String sql = "SELECT userid FROM usertbl WHERE userid=?";
+         PreparedStatement pstmt = con.prepareStatement(sql);
+         pstmt.setString(1, userid);
+         ResultSet rs = pstmt.executeQuery();
+         if(rs.next()){
+            userDto = new Password_01();
+            userDto.setUserid(rs.getString("userid"));
+
+            if(userDto.getPassword().equals(userid)){
+               result = true;  //중복이 있으면 ture값을
+            }
+         }
+
+      } catch (Exception e) {
+         e.printStackTrace();
+      }
+      return result;
+
+   }
+	
 }
