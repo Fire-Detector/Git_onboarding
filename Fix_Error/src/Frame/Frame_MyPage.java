@@ -3,16 +3,22 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
  * @author 솔데스크
  */
 public class Frame_MyPage extends javax.swing.JFrame {
-
     /**
      * Creates new form Frame_MyPage
      */
+    private String userId;
+    public void setting(String userId){
+        this.userId = userId;
+    }
+
     public Frame_MyPage() {
         initComponents();
     }
@@ -35,6 +41,15 @@ public class Frame_MyPage extends javax.swing.JFrame {
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         Btn_Selec = new javax.swing.JButton();
+        DB_Connect DB = new DB_Connect();
+        DB.getConnection();
+        List<UserDTO> userList = UserDTO.getAllUser();
+        UserDTO disk = userList.get(0);
+        Object[][] data = new Object[userList.size()][5];
+        UserDTO ds = userList.get(1);
+
+
+
 
         jLabel6.setText("jLabel5");
 
@@ -50,16 +65,16 @@ public class Frame_MyPage extends javax.swing.JFrame {
         jLabel3.setText("전화번호:");
 
         jLabel4.setFont(new java.awt.Font("맑은 고딕", 0, 24)); // NOI18N
-        jLabel4.setText("보유 머니:");
+        jLabel4.setText("성별:");
 
         jLabel5.setFont(new java.awt.Font("맑은 고딕", 0, 24)); // NOI18N
-        jLabel5.setText("jLabel5");
+        jLabel5.setText(ds.getName());
 
         jLabel7.setFont(new java.awt.Font("맑은 고딕", 0, 24)); // NOI18N
-        jLabel7.setText("jLabel5");
+        jLabel7.setText(ds.getUser_Phone());
 
         jLabel8.setFont(new java.awt.Font("맑은 고딕", 0, 24)); // NOI18N
-        jLabel8.setText("jLabel5");
+        jLabel8.setText(ds.getUser_Id());
 
         Btn_Selec.setText("선택화면으로 돌아가기");
         Btn_Selec.addActionListener(new java.awt.event.ActionListener() {

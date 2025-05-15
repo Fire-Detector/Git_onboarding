@@ -14,8 +14,6 @@ import javax.swing.JOptionPane;
  * @author 솔데스크
  */
 public class Frame_Register extends javax.swing.JFrame {
-    private int Check;
-
     /**
      * Creates new form Frame_Register
      */
@@ -153,6 +151,7 @@ public class Frame_Register extends javax.swing.JFrame {
     }// </editor-fold>
 
     private void Register_IdActionPerformed(java.awt.event.ActionEvent evt) {
+
 
     }
 
