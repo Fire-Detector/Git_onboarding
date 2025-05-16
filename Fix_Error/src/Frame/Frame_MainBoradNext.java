@@ -88,6 +88,7 @@ public class Frame_MainBoradNext extends javax.swing.JFrame {
         jButton2.setText("jButton1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(500, 500));
 
         jLabel1.setFont(new java.awt.Font("맑은 고딕", 1, 18)); // NOI18N
         jLabel1.setText("GPU");
@@ -95,26 +96,27 @@ public class Frame_MainBoradNext extends javax.swing.JFrame {
         jLabel2.setFont(new java.awt.Font("맑은 고딕", 3, 18)); // NOI18N
         jLabel2.setText("아이템 추가는 소스에서 추가 가능");
 
-        ImageIcon icon3 = new ImageIcon("C:\\Users\\soldesk\\Desktop\\git\\Git_onboarding-main\\Git_onboarding_fin\\Fix_Error\\src\\GIGABYTE 정품 기가바이트 B650M K 제이씨현 M-ATX DDR5 AMD.JPG");
+        ImageIcon icon3 = new ImageIcon("C:\\test1234\\Git_onboarding\\Fix_Error\\src\\GIGABYTE 정품 기가바이트 B650M K 제이씨현 M-ATX DDR5 AMD.JPG.JPG");
         Image Image3 = icon3.getImage();
         Image resizeImage3 = Image3.getScaledInstance( 100, 80, Image.SCALE_SMOOTH);
         ImageIcon resizedIcon3 = new ImageIcon(resizeImage3);
         Lbl_MainBoard4.setIcon(resizedIcon3);
         Lbl_MainBoard4.setText("");
-
-        ImageIcon icon4 = new ImageIcon("C:\\test1234\\Git_onboarding\\Fix_Error\\src\\MSI MAG Z890 TOMAHAWK WIFI.JPG");
+        
+        ImageIcon icon4 = new ImageIcon("C:\\test1234\\Git_onboarding\\Fix_Error\\src\\Gigabyte AORUS X890 Master.JPG");
         Image Image4 = icon4.getImage();
         Image resizeImage4= Image4.getScaledInstance( 100, 80, Image.SCALE_SMOOTH);
         ImageIcon resizedIcon4 = new ImageIcon(resizeImage4);
         Lbl_MainBoard5.setIcon(resizedIcon4);
         Lbl_MainBoard5.setText("");
 
-        ImageIcon icon5 = new ImageIcon("C:\\Users\\soldesk\\Desktop\\git\\Git_onboarding-main\\Git_onboarding_fin\\Fix_Error\\src\\MSI MAG Z890 TOMAHAWK WIFI.JPG");
+        ImageIcon icon5 = new ImageIcon("C:\\test1234\\Git_onboarding\\Fix_Error\\src\\MSI MAG Z890 TOMAHAWK WIFI.JPG");
         Image Image5 = icon5.getImage();
         Image resizeImage5 = Image5.getScaledInstance( 100, 80, Image.SCALE_SMOOTH);
         ImageIcon resizedIcon5 = new ImageIcon(resizeImage5);
         Lbl_MainBoard6.setIcon(resizedIcon5);
         Lbl_MainBoard6.setText("");
+
 
         ArrayList<MainBoard_02> MainBoardList = MainBoard_02.getMainBoardList();
         MainBoard_02 mainboard = MainBoardList.get(0);
@@ -127,32 +129,29 @@ public class Frame_MainBoradNext extends javax.swing.JFrame {
             data[i][2] = mb.getmbdata();
             data[i][3] = mb.getPrice();
         }
-        jLabel4.setText(mainboard.getmbid());
-        jLabel3.setText(mainboard.getPrice());
-        jLabel5.setText(mainboard.getobid());
-        jLabel8.setText(mainboard.getmbdata());
         
         if (MainBoardList.size() > 3) {
         MainBoard_02 mb3 = MainBoardList.get(3);
-        jLabel10.setText(mb3.getmbid());
-        jLabel11.setText(mb3.getPrice());
-        jLabel12.setText(mb3.getobid());
-        jLabel13.setText(mb3.getmbdata());
+        jLabel14.setText(mb3.getmbid());
+        jLabel16.setText(mb3.getPrice());
+        jLabel18.setText(mb3.getobid());
+        jLabel19.setText(mb3.getmbdata());
         }
 
         if (MainBoardList.size() > 4) {
         MainBoard_02 mb4 = MainBoardList.get(4);
-        jLabel14.setText(mb4.getmbid());
-        jLabel16.setText(mb4.getPrice());
-        jLabel18.setText(mb4.getobid());
-        jLabel19.setText(mb4.getmbdata());
+        jLabel10.setText(mb4.getmbid());
+        jLabel11.setText(mb4.getPrice());
+        jLabel12.setText(mb4.getobid());
+        jLabel13.setText(mb4.getmbdata());
         }
+
         if (MainBoardList.size() > 5) {
         MainBoard_02 mb5 = MainBoardList.get(5);
-        jLabel14.setText(mb5.getmbid());
-        jLabel16.setText(mb5.getPrice());
-        jLabel18.setText(mb5.getobid());
-        jLabel19.setText(mb5.getmbdata());
+        jLabel4.setText(mb5.getmbid());
+        jLabel3.setText(mb5.getPrice());
+        jLabel5.setText(mb5.getobid());
+        jLabel8.setText(mb5.getmbdata());
         }
 
 
@@ -209,7 +208,6 @@ public class Frame_MainBoradNext extends javax.swing.JFrame {
             }
         });
 
-       
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -298,17 +296,13 @@ public class Frame_MainBoradNext extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(Lbl_MainBoard6, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(Lbl_Info6))
+                                .addComponent(Lbl_MainBoard6, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(Button_Previous, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(Lbl_Name6)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(Lbl_Price6)
-                                .addGap(26, 26, 26)
-                                .addComponent(Lbl_Exam6))))
+                                .addComponent(Lbl_Price6))))
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(Lbl_Name4)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -331,9 +325,13 @@ public class Frame_MainBoradNext extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel16)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel18)
+                            .addComponent(Lbl_Info6))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jLabel19))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel19)
+                            .addComponent(Lbl_Exam6)))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(118, 118, 118)
                         .addComponent(jLabel10)
@@ -361,9 +359,6 @@ public class Frame_MainBoradNext extends javax.swing.JFrame {
 
     private void Button_PreviousActionPerformed(java.awt.event.ActionEvent evt) {                                                
         // TODO add your handling code here:
-        Frame_MainBoard pre = new Frame_MainBoard();
-        dispose();
-        pre.setVisible(true);
     }                                               
 
     private void Btn_Selec6ActionPerformed(java.awt.event.ActionEvent evt) {                                           
