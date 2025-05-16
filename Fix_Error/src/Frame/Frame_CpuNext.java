@@ -12,7 +12,7 @@ import java.awt.Image;
 import java.util.ArrayList;
 
 import javax.swing.ImageIcon;
-
+import javax.swing.*;
 /**
  *
  * @author 솔데스크
@@ -143,22 +143,24 @@ public class Frame_CpuNext extends javax.swing.JFrame {
                 Button_PreviousActionPerformed(evt);
             }
         });
-
-        Btn_Selec4.setText("jButton1");
+        
+        Btn_Selec4.setText("추가");
         Btn_Selec4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Btn_Selec4ActionPerformed(evt);
+                
             }
+        
         });
 
-        Btn_Selec5.setText("jButton1");
+        Btn_Selec5.setText("추가");
         Btn_Selec5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Btn_Selec5ActionPerformed(evt);
             }
         });
 
-        Btn_Selec6.setText("jButton1");
+        Btn_Selec6.setText("추가");
         Btn_Selec6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 Btn_Selec6ActionPerformed(evt);

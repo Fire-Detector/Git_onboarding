@@ -3,19 +3,115 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
 
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.List;
+
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author 솔데스크
  */
-public class Frame_Cart extends javax.swing.JFrame {
 
+
+public class Frame_Cart extends javax.swing.JFrame {
+    // 장바구니 데이터 로딩 (DB → JTable)
+    public void loadCartDataFromDatabase() {
+    DefaultTableModel model = (DefaultTableModel) Tbl_Cart.getModel();
+    model.setRowCount(0); // 기존 데이터 삭제
+
+    try (Connection conn = DriverManager.getConnection(
+         "jdbc:oracle:thin:@localhost:1521:xe", "member", "12345")) {
+
+        String sql = "SELECT name, spec, price, description FROM cart";
+        PreparedStatement pstmt = conn.prepareStatement(sql);
+        ResultSet rs = pstmt.executeQuery();
+
+        while (rs.next()) {
+            String name = rs.getString("name");
+            String spec = rs.getString("spec");
+            String price = rs.getString("price");
+            String description = rs.getString("description");
+            model.addRow(new Object[]{name, spec, price, description});
+        }
+
+        rs.close();
+        pstmt.close();
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
+}
+
+// 장바구니 데이터 저장 (JTable → DB)
+public void saveCartDataToDatabase() {
+    try (Connection conn = DriverManager.getConnection(
+         "jdbc:oracle:thin:@localhost:1521:xe", "member", "12345")) {
+
+        String deleteSql = "DELETE FROM cart";
+        PreparedStatement deleteStmt = conn.prepareStatement(deleteSql);
+        deleteStmt.executeUpdate();
+        deleteStmt.close();
+
+        String insertSql = "INSERT INTO cart (name, spec, price, description) VALUES (?, ?, ?, ?)";
+        PreparedStatement pstmt = conn.prepareStatement(insertSql);
+
+        DefaultTableModel model = (DefaultTableModel) Tbl_Cart.getModel();
+        for (int i = 0; i < model.getRowCount(); i++) {
+            pstmt.setString(1, model.getValueAt(i, 0).toString());
+            pstmt.setString(2, model.getValueAt(i, 1).toString());
+            pstmt.setString(3, model.getValueAt(i, 2).toString());
+            pstmt.setString(4, model.getValueAt(i, 3).toString());
+            pstmt.addBatch();
+        }
+
+        pstmt.executeBatch();
+        pstmt.close();
+    } catch (Exception e) {
+        e.printStackTrace();
+    }
+}
+
+    public void loadCpuListToCart(List<CPU_DB> cpulList) {
+    DefaultTableModel model = (DefaultTableModel) Tbl_Cart.getModel();
+    model.setRowCount(0); // 기존 데이터 초기화
+
+    for (CPU_DB cpu : cpulList) {
+        model.addRow(new Object[]{
+            cpu.getcpuid(),        // 제품 명
+            cpu.getcpudata(),      // 성능
+            cpu.getcpuprice(),     // 가격
+            cpu.getcpuprodctid()   // 제품 정보
+        });
+    }
+}
+    public static Frame_Cart instance;
     /**
      * Creates new form NewJFrame
      */
     public Frame_Cart() {
-        initComponents();
-    }
+          instance = this;
+            initComponents();
 
+       loadCartDataFromDatabase(); // 장바구니 열릴 때 DB 불러오기
+
+        addWindowListener(new WindowAdapter() {
+        @Override
+        public void windowClosing(WindowEvent e) {
+            saveCartDataToDatabase(); // 창 닫을 때 DB 저장
+        }
+    });
+    
+    }
+    public void addRowToCart(String name, String spec, String price, String desc) {
+        DefaultTableModel model = (DefaultTableModel) Tbl_Cart.getModel();
+     model.insertRow(0, new Object[]{name, spec, price, desc}); // 맨 위에 삽입
+    
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -37,7 +133,7 @@ public class Frame_Cart extends javax.swing.JFrame {
 
         jLabel3.setText("jLabel3");
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(450, 480));
 
         jLabel1.setFont(new java.awt.Font("맑은 고딕", 0, 24)); // NOI18N
@@ -52,10 +148,7 @@ public class Frame_Cart extends javax.swing.JFrame {
 
         Tbl_Cart.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+              
             },
             new String [] {
                 "제품 명", "성능", "가격", "설명"

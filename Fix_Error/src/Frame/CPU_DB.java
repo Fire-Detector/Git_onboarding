@@ -28,7 +28,7 @@ public class CPU_DB {
         ArrayList<CPU_DB> list = new ArrayList<>();
         try {
         	Connection conn = DriverManager.getConnection(
-        	"jdbc:oracle:thin:@localhost:1521:xe", "admin", "12345");
+        	"jdbc:oracle:thin:@localhost:1521:xe", "member", "12345");
             
             String sql = "SELECT * FROM product";
             PreparedStatement pstmt = conn.prepareStatement(sql);
