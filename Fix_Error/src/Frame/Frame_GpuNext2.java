@@ -8,11 +8,8 @@
     아이템 보여주고 1번째는 아이템 번호, 2번째는 아이템 이름 
 */
 
-import java.awt.Image;
-import java.awt.event.ActionEvent;
 import java.util.ArrayList;
 
-import javax.swing.ImageIcon;
 /**
  *
  * @author 솔데스크
@@ -94,28 +91,12 @@ public class Frame_GpuNext extends javax.swing.JFrame {
 
         jLabel2.setFont(new java.awt.Font("맑은 고딕", 3, 18)); // NOI18N
         jLabel2.setText("아이템 추가는 소스에서 추가 가능");
-        
-        
-        ImageIcon icon3 = new ImageIcon("C:\\test1234\\Git_onboarding\\Fix_Error\\src\\AMD RX 9070 XT.png");
-        Image Image3 = icon3.getImage();
-        Image resizeImage3 = Image3.getScaledInstance( 100, 80, Image.SCALE_SMOOTH);
-        ImageIcon resizedIcon3 = new ImageIcon(resizeImage3);
-        Lbl_Gpu4.setIcon(resizedIcon3);
-        Lbl_Gpu4.setText("");
 
-        ImageIcon icon4 = new ImageIcon("C:\\test1234\\Git_onboarding\\Fix_Error\\src\\AMD RX 7700 XT.png");
-        Image Image4 = icon4.getImage();
-        Image resizeImage4 = Image4.getScaledInstance( 100, 80, Image.SCALE_SMOOTH);
-        ImageIcon resizedIcon4 = new ImageIcon(resizeImage4);
-        Lbl_Gpu5.setIcon(resizedIcon4);
-        Lbl_Gpu5.setText("");
+        Lbl_Gpu4.setText("그림 넣어주세요4");
 
-        ImageIcon icon5 = new ImageIcon("C:\\test1234\\Git_onboarding\\Fix_Error\\src\\NVIDIA RTX 5060.jpg");
-        Image Image5 = icon5.getImage();
-        Image resizeImage5 = Image5.getScaledInstance( 100, 80, Image.SCALE_SMOOTH);
-        ImageIcon resizedIcon5 = new ImageIcon(resizeImage5);
-        Lbl_Gpu6.setIcon(resizedIcon5);
-        Lbl_Gpu6.setText(".");
+        Lbl_Gpu5.setText("그림 넣어주세요5");
+
+        Lbl_Gpu6.setText("그림 넣어주세요6");
 
         Lbl_Name4.setText("이름:");
 
@@ -140,9 +121,6 @@ public class Frame_GpuNext extends javax.swing.JFrame {
         Lbl_Exam6.setText("설명:");
 
         Lbl_Exam5.setText("설명:");
-        
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(430, 470));
 
         Button_Previous.setText("이전 페이지");
         Button_Previous.setPreferredSize(new java.awt.Dimension(100, 30));
@@ -152,93 +130,27 @@ public class Frame_GpuNext extends javax.swing.JFrame {
             }
         });
 
-        Btn_Selec4.setText("추가");
+        Btn_Selec4.setText("jButton1");
         Btn_Selec4.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-           public void actionPerformed(ActionEvent e) {
-               // CPU 데이터 리스트 가져오기
-               ArrayList<Disk_02> diskList = Disk_02.getDiskList();
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_Selec4ActionPerformed(evt);
+            }
+        });
 
-           if (diskList.size() > 9) {
-        	   Disk_02 disk = diskList.get(9);; // 세번째 CPU만 선택
-
-               String cpuid = disk.getDiskid();
-               String cpudata = disk.getDiskdata();
-               String cpuprice = disk.getPrice();
-               String cpuprodctid = disk.getProdctid();
-    
-               // 세번쨰 CPU 장바구니로 이동
-             if (Frame_Cart.instance == null || !Frame_Cart.instance.isDisplayable()) {
-               Frame_Cart cart = new Frame_Cart();
-               cart.setVisible(true);
-   }
-
-               //CPU값 장바구니에 저장
-               Frame_Cart.instance.addRowToCart(cpuid, cpudata, cpuprice, cpuprodctid);
-               Frame_Cart.instance.saveCartDataToDatabase();
-           }
-           
-       }
-   });
-
-        Btn_Selec5.setText("추가");
+        Btn_Selec5.setText("jButton1");
         Btn_Selec5.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-           public void actionPerformed(ActionEvent e) {
-               // CPU 데이터 리스트 가져오기
-               ArrayList<Disk_02> diskList = Disk_02.getDiskList();
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_Selec5ActionPerformed(evt);
+            }
+        });
 
-           if (diskList.size() > 10) {
-        	   Disk_02 disk = diskList.get(10);; // 세번째 CPU만 선택
-
-               String cpuid = disk.getDiskid();
-               String cpudata = disk.getDiskdata();
-               String cpuprice = disk.getPrice();
-               String cpuprodctid = disk.getProdctid();
-    
-               // 세번쨰 CPU 장바구니로 이동
-             if (Frame_Cart.instance == null || !Frame_Cart.instance.isDisplayable()) {
-               Frame_Cart cart = new Frame_Cart();
-               cart.setVisible(true);
-   }
-
-               //CPU값 장바구니에 저장
-               Frame_Cart.instance.addRowToCart(cpuid, cpudata, cpuprice, cpuprodctid);
-               Frame_Cart.instance.saveCartDataToDatabase();
-           }
-           
-       }
-   });
-
-        Btn_Selec6.setText("추가");
+        Btn_Selec6.setText("jButton1");
         Btn_Selec6.addActionListener(new java.awt.event.ActionListener() {
-            @Override
-           public void actionPerformed(ActionEvent e) {
-               // CPU 데이터 리스트 가져오기
-               ArrayList<Disk_02> diskList = Disk_02.getDiskList();
-
-           if (diskList.size() > 11) {
-        	   Disk_02 disk = diskList.get(11);; // 세번째 CPU만 선택
-
-               String cpuid = disk.getDiskid();
-               String cpudata = disk.getDiskdata();
-               String cpuprice = disk.getPrice();
-               String cpuprodctid = disk.getProdctid();
-    
-               // 세번쨰 CPU 장바구니로 이동
-             if (Frame_Cart.instance == null || !Frame_Cart.instance.isDisplayable()) {
-               Frame_Cart cart = new Frame_Cart();
-               cart.setVisible(true);
-   }
-
-               //CPU값 장바구니에 저장
-               Frame_Cart.instance.addRowToCart(cpuid, cpudata, cpuprice, cpuprodctid);
-               Frame_Cart.instance.saveCartDataToDatabase();
-           }
-           
-       }
-   });
-
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Btn_Selec6ActionPerformed(evt);
+            }
+        });
+        
         ArrayList<Disk_02> diskList = Disk_02.getDiskList();
         Disk_02 disk = diskList.get(0);
         Object[][] data = new Object[diskList.size()][11];
@@ -521,6 +433,4 @@ public class Frame_GpuNext extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     // End of variables declaration//GEN-END:variables
-
-
 }
