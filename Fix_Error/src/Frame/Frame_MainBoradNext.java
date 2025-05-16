@@ -359,6 +359,9 @@ public class Frame_MainBoradNext extends javax.swing.JFrame {
 
     private void Button_PreviousActionPerformed(java.awt.event.ActionEvent evt) {                                                
         // TODO add your handling code here:
+        Frame_MainBoard next = new Frame_MainBoard();
+        dispose();
+        next.setVisible(true);
     }                                               
 
     private void Btn_Selec6ActionPerformed(java.awt.event.ActionEvent evt) {                                           
