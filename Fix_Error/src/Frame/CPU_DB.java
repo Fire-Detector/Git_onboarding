@@ -11,6 +11,7 @@ public class CPU_DB {
     private String cpuid;
     private String cpuprice;
     private String cpudata;
+    private String User_Id;
 
     public CPU_DB(String cpuid, String cpuprice, String cpudata, String cpuprodctid){
         this.cpuid = cpuid;
@@ -31,7 +32,8 @@ public class CPU_DB {
         	"jdbc:oracle:thin:@localhost:1521:xe", "admin", "12345");
             
             String sql = "SELECT * FROM product";
-            PreparedStatement pstmt = conn.prepareStatement(sql);
+            PreparedStatement pstmt = null;
+            conn.prepareStatement(sql);
             ResultSet rs = pstmt.executeQuery();
  
             while (rs.next()) {

@@ -14,12 +14,12 @@ import java.util.ArrayList;
  *
  * @author 솔데스크
  */
-public class Frame_GpuNext extends javax.swing.JFrame {
+public class Frame_GpuNext2 extends javax.swing.JFrame {
 
     /**
      * Creates new form Frame_Cpu
      */
-    public Frame_GpuNext() {
+    public Frame_GpuNext2() {
         initComponents();
     }
 
@@ -371,13 +371,13 @@ public class Frame_GpuNext extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Frame_GpuNext.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Frame_GpuNext2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Frame_GpuNext.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Frame_GpuNext2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Frame_GpuNext.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Frame_GpuNext2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Frame_GpuNext.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Frame_GpuNext2.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
         //</editor-fold>
@@ -387,7 +387,7 @@ public class Frame_GpuNext extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Frame_GpuNext().setVisible(true);
+                new Frame_GpuNext2().setVisible(true);
             }
         });
     }

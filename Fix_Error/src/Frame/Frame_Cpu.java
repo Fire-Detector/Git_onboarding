@@ -25,11 +25,15 @@ import javax.xml.crypto.Data;
  * @author 솔데스크
  */
 public class Frame_Cpu extends javax.swing.JFrame {
-
     /**
      * Creates new form Frame_Cpu
      */
+    private String userId;
+    private ArrayList<CPU_DB> cpuList;
+    
     public Frame_Cpu() {
+        this.userId = userId;
+        this.cpuList = CPU_DB.getCpulist(); // 한 번만 가져오기
         initComponents();
     }
 
@@ -169,7 +173,7 @@ public class Frame_Cpu extends javax.swing.JFrame {
 
             // 첫번째 CPU 장바구니로 이동
           if (Frame_Cart.instance == null || !Frame_Cart.instance.isDisplayable()) {
-            Frame_Cart cart = new Frame_Cart();
+            Frame_Cart cart = new Frame_Cart(userId);
             cart.setVisible(true);
 }
 
@@ -198,7 +202,7 @@ public class Frame_Cpu extends javax.swing.JFrame {
 
             // 두번째 CPU 장바구니로 이동
           if (Frame_Cart.instance == null || !Frame_Cart.instance.isDisplayable()) {
-            Frame_Cart cart = new Frame_Cart();
+            Frame_Cart cart = new Frame_Cart(userId);
             cart.setVisible(true);
 }
 
@@ -228,7 +232,7 @@ public class Frame_Cpu extends javax.swing.JFrame {
  
             // 세번쨰 CPU 장바구니로 이동
           if (Frame_Cart.instance == null || !Frame_Cart.instance.isDisplayable()) {
-            Frame_Cart cart = new Frame_Cart();
+            Frame_Cart cart = new Frame_Cart(userId);
             cart.setVisible(true);
 }
 
@@ -454,7 +458,7 @@ public class Frame_Cpu extends javax.swing.JFrame {
 
     private void Btn_MoveSelectActionPerformed(java.awt.event.ActionEvent evt) {                                               
         // TODO add your handling code here:
-        Frame_Select next = new Frame_Select();
+        Frame_Select next = new Frame_Select(userId);
         dispose();
         next.setVisible(true);
     }                                              
